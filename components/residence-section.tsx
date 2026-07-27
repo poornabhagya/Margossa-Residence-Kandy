@@ -14,12 +14,12 @@ import {
   ChevronLeft, 
   ChevronRight 
 } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn, basePath } from '@/lib/utils'
 
 const CARDS = [
   {
     title: 'Sky Pavilion Villa',
-    image: '/room-sky-pavilion.png',
+    image: `${basePath}/room-sky-pavilion.png`,
     features: [
       { text: '90 sqm Total', icon: Square },
       { text: 'Outdoor Jacuzzi', icon: Waves },
@@ -28,7 +28,7 @@ const CARDS = [
   },
   {
     title: 'Sky Tented Villa',
-    image: '/room-sky-tented.png',
+    image: `${basePath}/room-sky-tented.png`,
     features: [
       { text: '85 sqm Total', icon: Square },
       { text: 'Outdoor Bathtub', icon: Bath },
@@ -37,7 +37,7 @@ const CARDS = [
   },
   {
     title: 'Dining Experience',
-    image: '/hero-3.png',
+    image: `${basePath}/hero-3.png`,
     features: [
       { text: 'Personalised Cuisine', icon: Utensils },
       { text: 'Panoramic Views', icon: Compass },
@@ -46,7 +46,7 @@ const CARDS = [
   },
   {
     title: 'Sol Sanctuary & Living Space',
-    image: '/room-sol-sanctuary.png',
+    image: `${basePath}/room-sol-sanctuary.png`,
     features: [
       { text: 'Spacious Lounge', icon: Smile },
       { text: 'Contemporary Comfort', icon: Sparkles },

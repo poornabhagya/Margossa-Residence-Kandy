@@ -1,13 +1,14 @@
 'use client'
 
 import Image from 'next/image'
+import { basePath } from '@/lib/utils'
 
 export function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen w-full flex flex-col justify-center items-center px-4 py-20 overflow-hidden">
       {/* Single Background Image */}
       <Image
-        src="/hero-1.png"
+        src={`${basePath}/hero-1.png`}
         alt="Aerial view of Margossa Residence set in the green hills of Kandy"
         fill
         priority

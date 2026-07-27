@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Star, Play } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn, basePath } from '@/lib/utils'
 
 const REVIEWS = [
   {
@@ -156,7 +156,7 @@ export function ReviewsSection() {
               aria-label="Play guest experience video"
             >
               <Image
-                src="/video-thumb.png"
+                src={`${basePath}/video-thumb.png`}
                 alt="Davud Akhundzada Kandy Vlog at Margossa Residence"
                 fill
                 sizes="(max-width: 1024px) 100vw, 1024px"

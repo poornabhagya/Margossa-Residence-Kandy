@@ -3,27 +3,27 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn, basePath } from '@/lib/utils'
 
 const CARDS = [
   {
     id: 0,
     title: 'Cultural Journeys',
-    image: '/exp-temple.png',
+    image: `${basePath}/exp-temple.png`,
     description: "Explore sacred temples, historic architecture, and Kandy's rich artistic traditions.",
     linkText: 'Explore Culture',
   },
   {
     id: 1,
     title: 'Hillside Discovery',
-    image: '/exp-tea.png',
+    image: `${basePath}/exp-tea.png`,
     description: "Wander through rolling tea estates, waterfalls, and breathtaking mountain vistas.",
     linkText: 'Explore Nature',
   },
   {
     id: 2,
     title: 'Culinary Heritage',
-    image: '/hero-3.png',
+    image: `${basePath}/hero-3.png`,
     description: "Savour local flavours, authentic curries, and curated high-tea experiences.",
     linkText: 'Explore Dining',
   },

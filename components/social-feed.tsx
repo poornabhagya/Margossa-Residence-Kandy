@@ -1,17 +1,18 @@
 import Image from 'next/image'
 import { Camera, Play, Layers } from 'lucide-react'
+import { basePath } from '@/lib/utils'
 
 const POSTS = [
-  { src: '/social-1.png', alt: 'Breakfast tray with tropical fruit on a villa terrace', type: 'carousel' },
-  { src: '/social-2.png', alt: 'Infinity plunge pool overlooking the hills', type: 'reel' },
-  { src: '/social-3.png', alt: 'Villa bedroom detail with cream linens and flowers', type: 'image' },
-  { src: '/social-4.png', alt: 'Path through a lush tropical garden', type: 'image' },
-  { src: '/social-5.png', alt: 'Misty sunrise over forested mountains', type: 'reel' },
-  { src: '/social-6.png', alt: 'Candlelit alfresco dinner on a terrace', type: 'carousel' },
-  { src: '/social-7.png', alt: 'Outdoor jacuzzi on a private villa deck', type: 'image' },
-  { src: '/social-8.png', alt: 'Traditional Kandyan brass and wood decor accent', type: 'image' },
-  { src: '/welcome-villa.png', alt: 'Villa exterior surrounded by tropical greenery', type: 'carousel' },
-  { src: '/hero-3.png', alt: 'Infinity plunge pool at sunrise', type: 'reel' },
+  { src: `${basePath}/social-1.png`, alt: 'Breakfast tray with tropical fruit on a villa terrace', type: 'carousel' },
+  { src: `${basePath}/social-2.png`, alt: 'Infinity plunge pool overlooking the hills', type: 'reel' },
+  { src: `${basePath}/social-3.png`, alt: 'Villa bedroom detail with cream linens and flowers', type: 'image' },
+  { src: `${basePath}/social-4.png`, alt: 'Path through a lush tropical garden', type: 'image' },
+  { src: `${basePath}/social-5.png`, alt: 'Misty sunrise over forested mountains', type: 'reel' },
+  { src: `${basePath}/social-6.png`, alt: 'Candlelit alfresco dinner on a terrace', type: 'carousel' },
+  { src: `${basePath}/social-7.png`, alt: 'Outdoor jacuzzi on a private villa deck', type: 'image' },
+  { src: `${basePath}/social-8.png`, alt: 'Traditional Kandyan brass and wood decor accent', type: 'image' },
+  { src: `${basePath}/welcome-villa.png`, alt: 'Villa exterior surrounded by tropical greenery', type: 'carousel' },
+  { src: `${basePath}/hero-3.png`, alt: 'Infinity plunge pool at sunrise', type: 'reel' },
 ]
 
 export function SocialFeed() {

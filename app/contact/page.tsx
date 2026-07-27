@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { basePath } from '@/lib/utils'
 
 const QUICK_LINKS = [
   { label: 'Home', href: '#home' },
@@ -74,7 +75,7 @@ export default function ContactPage() {
       {/* 1. Hero Header Section */}
       <section className="relative h-[320px] md:h-[400px] w-full overflow-hidden flex items-center justify-center pt-20">
         <Image
-          src="/hero-2.png"
+          src={`${basePath}/hero-2.png`}
           alt="Margossa Residence hillside landscape at dusk"
           fill
           priority
