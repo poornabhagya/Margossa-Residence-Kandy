@@ -1,2 +1,2 @@
-:HL["/Margossa-Residence-Kandy/_next/static/chunks/04a4.drzc-zb-.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"HF9yAJJ4s81GK3us2juVO"}
+:HL["/Margossa-Residence-Kandy/_next/static/chunks/0kcc0i2fp7r1y.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"2qBMpEEKeFqVk15W7mXWg"}
