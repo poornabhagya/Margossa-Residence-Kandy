@@ -1,10 +1,23 @@
+const basePath = process.env.NODE_ENV === 'production' ? '/Margossa-Residence-Kandy' : ''
+
 export function WelcomeSection() {
   return (
     <section id="welcome" className="bg-white py-20 w-full">
-      <div className="px-6 max-w-4xl mx-auto text-center">
+      <div className="px-6 max-w-4xl mx-auto text-center flex flex-col items-center">
+        
+        {/* Logo */}
+        <div className="flex flex-col items-center justify-center mb-6">
+          <img
+            src={`${basePath}/MargossaKandyLogo.png`}
+            alt="Margossa Residence Logo"
+            style={{ height: '95px', width: 'auto' }}
+            className="object-contain mb-4"
+          />
+        </div>
+
         {/* Sub-heading */}
         <span className="block text-xs tracking-[0.2em] text-gray-500 uppercase mb-3">
-          MARGOSSA RESIDENCE. KANDY
+          MARGOSSA RESIDENCE, KANDY
         </span>
 
         {/* Main Heading */}
@@ -21,19 +34,10 @@ export function WelcomeSection() {
         </p>
 
         {/* Body Paragraph */}
-        <p className="text-sm text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto">
+        <p className="text-sm text-gray-600 leading-relaxed max-w-3xl mx-auto">
           Margossa Residence offers an intimate boutique retreat where contemporary architecture meets authentic Sri Lankan warmth. Every space has been carefully designed to create a sense of comfort, elegance, and tranquillity, with handcrafted details, panoramic views, and personalised service that make every stay feel effortless. Located just minutes from Kandy's iconic cultural landmarks, Margossa provides the perfect balance between peaceful seclusion and convenient exploration, inviting guests to relax, reconnect, and discover the timeless beauty of Sri Lanka's hill capital.
         </p>
 
-        {/* CTA Button */}
-        <div>
-          <a
-            href="#residence"
-            className="inline-block border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-3 text-xs tracking-widest uppercase transition-all duration-300 rounded-none"
-          >
-            About Margossa
-          </a>
-        </div>
       </div>
     </section>
   )

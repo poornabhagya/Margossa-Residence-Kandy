@@ -6,6 +6,8 @@ import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { InquiryModal } from './inquiry-modal'
 
+const basePath = process.env.NODE_ENV === 'production' ? '/Margossa-Residence-Kandy' : ''
+
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Our Resort', href: '/#residence' },
@@ -20,31 +22,34 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-40 bg-white border-b border-gray-100 shadow-sm h-20 flex items-center">
+      <header 
+        style={{ minHeight: '90px' }}
+        className="fixed inset-x-0 top-0 z-40 bg-white border-b border-gray-100 shadow-sm py-3 flex items-center min-h-[90px]"
+      >
         <div className="flex justify-between items-center w-full px-4 sm:px-6 md:px-8 relative z-50">
           
           {/* Left Side: Hamburger & Margossa Kandy label */}
           <button
             type="button"
             onClick={() => setOpen(true)}
+            aria-label="Open navigation menu"
             className="flex items-center gap-3 group focus:outline-none shrink-0"
           >
             <div className="flex flex-col gap-1.5 w-5 shrink-0">
               <span className="h-0.5 w-full bg-gray-900 transition-all duration-300 group-hover:bg-amber-800" />
               <span className="h-0.5 w-full bg-gray-900 transition-all duration-300 group-hover:bg-amber-800" />
             </div>
-            
           </button>
 
           {/* Center Logo */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center leading-none">
-            <Link href="/" className="flex flex-col items-center leading-none">
-              <span className="font-serif text-base sm:text-lg md:text-xl font-bold tracking-wider text-gray-900 transition-colors hover:text-amber-800 whitespace-nowrap">
-                Margossa Residence
-              </span>
-              <span className="mt-1 text-[0.55rem] sm:text-[0.6rem] font-medium uppercase tracking-[0.4em] text-gray-500">
-                Kandy
-              </span>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center h-auto min-h-[70px] w-auto">
+            <Link href="/" className="flex items-center justify-center h-auto min-h-[70px] w-auto group py-1">
+              <img
+                src={`${basePath}/MargossaKandyLogo.png`}
+                alt="Margossa Residence"
+                style={{ height: '70px', width: 'auto', minHeight: '70px', maxHeight: 'none' }}
+                className="block h-[70px] min-h-[70px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
           </div>
 
@@ -89,9 +94,16 @@ export function SiteHeader() {
               <X className="size-5 transition-transform group-hover:rotate-90 duration-300" />
               <span className="text-xs uppercase tracking-widest font-semibold">Close</span>
             </button>
-            <span className="font-serif text-sm font-semibold tracking-wider text-gray-900 uppercase">
-              Margossa
-            </span>
+            <div className="flex items-center gap-2">
+              <img
+                src={`${basePath}/MargossaKandyLogo.png`}
+                alt="Margossa Logo"
+                className="h-8 w-auto object-contain"
+              />
+              <span className="font-serif text-sm font-semibold tracking-wider text-gray-900 uppercase">
+                Margossa
+              </span>
+            </div>
           </div>
 
           {/* Drawer Links */}

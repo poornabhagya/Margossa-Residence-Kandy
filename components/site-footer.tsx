@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import { Star } from 'lucide-react'
+import { basePath } from '@/lib/utils'
 
 const QUICK_LINKS = [
   { label: 'Home', href: '/' },
@@ -29,22 +31,32 @@ const TwitterIcon = () => (
   </svg>
 )
 
+const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=margossa+residence+kandy+tripadvisor&sca_esv=b83e30d655369951&hl=en&sxsrf=APpeQnuGRGlbvOzPHJJY_YveI1vL-Kzg-A%3A1785391885093&source=hp&ei=DetqapbxAeDH4-EPwrSsmQs&iflsig=ABILxe8AAAAAamr5HRHEMXbz5Wz3sZpx6a5E73ASfexL&oq=margossa+residence+kandy+tr&gs_lp=Egdnd3Mtd2l6IhttYXJnb3NzYSByZXNpZGVuY2Uga2FuZHkgdHIqAggAMgUQIRigATIFECEYoAEyBRAhGKABMgUQIRigATIFECEYnwUyBRAhGJ8FMgUQIRifBUidM1AAWM8qcAJ4AJABAJgBoAGgAZYNqgEEMTAuNrgBA8gBAPgBAZgCEqACkg6oAgrCAgQQIxgnwgIKECMYyQIY8AUYJ8ICEBAuGIAEGIoFGEMYxwEY0QPCAhAQABiABBiKBRhDGLEDGIMBwgIKEAAYgAQYigUYQ8ICCxAAGIAEGLEDGIMBwgILEAAYgAQYigUYsQPCAggQABiABBixA8ICChAjGPAFGMkCGCfCAgsQABiABBiKBRiRAsICChAuGIAEGIoFGEPCAgUQABiABMICBxAjGOoCGCfCAg0QLhjHARjRAxjqAhgnwgINECMYyQIY8AUY6gIYJ8ICDhAAGIAEGIoFGLEDGIMBwgIHECMY8AUYJ8ICFBAuGIAEGLEDGMcBGK8BGJgFGJkFwgIREC4YgAQYigUYsQMYxwEYrwHCAg0QLhiABBiKBRhDGLEDwgIFEC4YgATCAggQLhiABBixA8ICERAuGK8BGMcBGIAEGJgFGJkFwgIOEC4YgAQxwEYrwEYmAXCAgkQLhgKGAsYgATCAgkQABiABBgKGAvCAhUQLhgKGAsYrwEYxwEYgAQYmAUYmQXCAgQQABgewgIFEAAY7wXCAggQABiABBiiBMICBhAAGBYYHsICCBAAGIkFGKIEwgILEAAYgAQYigUYhgPCAgQQIRgVmAME8QXEr0qTIabmO5IHBDcuMTGgB8eoAbIHBDUuMTG4B4gOwgcKMC41LjExLjEuMcgHVYAIAQ&sclient=gws-wiz#lrd=0x3ae369a5710e9a93:0x95bd998cf9ca48e6,1"
+
+const INSTAGRAM_ACCOUNT_URL = "https://www.instagram.com/margossaresidencekandy/"
+
 export function SiteFooter() {
   return (
     <footer id="contact" className="bg-[#E3E5D8] text-gray-800 w-full border-t border-gray-300/60">
       <div className="mx-auto max-w-7xl px-6 py-16 items-start">
         
         {/* 4-Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
           
-          {/* Column 1: Logo */}
-          <div>
-            <p className="text-gray-900 font-serif text-3xl font-bold tracking-tight mb-2">
-              Margossa Residence
-            </p>
-            <span className="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#8C6D3B] block">
-              Kandy
-            </span>
+          {/* Column 1: Properly Scaled Full Logo */}
+          <div className="flex flex-col items-start justify-start">
+            <a href="/" className="inline-block transition-opacity hover:opacity-90">
+              <div style={{ width: '140px', height: 'auto' }}>
+                <Image
+                  src={`${basePath}/MargossaLogo.png`} 
+                  alt="Margossa Residence Logo"
+                  width={140}
+                  height={140}
+                  style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+                  priority
+                />
+              </div>
+            </a>
           </div>
 
           {/* Column 2: Reservations & Contact */}
@@ -86,7 +98,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Column 4: Socials & Badges */}
+          {/* Column 4: Socials & Connected Google Reviews Badge */}
           <div>
             <h4 className="text-[#8C6D3B] uppercase text-xs tracking-[0.2em] font-semibold mb-4">
               Follow us
@@ -96,7 +108,7 @@ export function SiteFooter() {
             <div className="flex gap-3 mb-6">
               {[
                 { icon: FacebookIcon, label: 'Facebook', href: 'https://facebook.com' },
-                { icon: InstagramIcon, label: 'Instagram', href: 'https://instagram.com' },
+                { icon: InstagramIcon, label: 'Instagram', href: INSTAGRAM_ACCOUNT_URL },
                 { icon: TwitterIcon, label: 'Twitter', href: 'https://twitter.com' },
               ].map(({ icon: Icon, label, href }) => (
                 <a
@@ -112,26 +124,23 @@ export function SiteFooter() {
               ))}
             </div>
 
-            {/* Rating Badges */}
-            <div className="flex flex-col gap-3">
-              {/* Google Reviews */}
-              <div className="flex items-center gap-2 rounded-none border border-gray-300 px-4 py-2 w-fit bg-white/50 shadow-xs">
+            {/* Google Reviews Badge */}
+            <div>
+              <a 
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-none border border-gray-300 px-4 py-2 w-fit bg-white/60 shadow-xs hover:bg-white hover:border-gray-400 transition-all cursor-pointer group"
+              >
                 <div className="flex gap-0.5 text-yellow-600">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="size-3.5 fill-current" />
                   ))}
                 </div>
-                <span className="text-[10px] uppercase tracking-widest text-gray-800 font-semibold">Google Reviews</span>
-              </div>
-              {/* Tripadvisor */}
-              <div className="flex items-center gap-2 rounded-none border border-gray-300 px-4 py-2 w-fit bg-white/50 shadow-xs">
-                <div className="flex gap-0.5 text-[#00AF87]">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="size-3.5 fill-current" />
-                  ))}
-                </div>
-                <span className="text-[10px] uppercase tracking-widest text-gray-800 font-semibold">Tripadvisor</span>
-              </div>
+                <span className="text-[10px] uppercase tracking-widest text-gray-800 font-semibold group-hover:text-amber-900">
+                  Google Reviews
+                </span>
+              </a>
             </div>
 
           </div>

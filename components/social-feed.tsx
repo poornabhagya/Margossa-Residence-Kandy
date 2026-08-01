@@ -1,82 +1,93 @@
-import Image from 'next/image'
-import { Camera, Play, Layers } from 'lucide-react'
-import { basePath } from '@/lib/utils'
+import { Camera, Video, Layers } from 'lucide-react'
 
-const POSTS = [
-  { src: `${basePath}/social-1.png`, alt: 'Breakfast tray with tropical fruit on a villa terrace', type: 'carousel' },
-  { src: `${basePath}/social-2.png`, alt: 'Infinity plunge pool overlooking the hills', type: 'reel' },
-  { src: `${basePath}/social-3.png`, alt: 'Villa bedroom detail with cream linens and flowers', type: 'image' },
-  { src: `${basePath}/social-4.png`, alt: 'Path through a lush tropical garden', type: 'image' },
-  { src: `${basePath}/social-5.png`, alt: 'Misty sunrise over forested mountains', type: 'reel' },
-  { src: `${basePath}/social-6.png`, alt: 'Candlelit alfresco dinner on a terrace', type: 'carousel' },
-  { src: `${basePath}/social-7.png`, alt: 'Outdoor jacuzzi on a private villa deck', type: 'image' },
-  { src: `${basePath}/social-8.png`, alt: 'Traditional Kandyan brass and wood decor accent', type: 'image' },
-  { src: `${basePath}/welcome-villa.png`, alt: 'Villa exterior surrounded by tropical greenery', type: 'carousel' },
-  { src: `${basePath}/hero-3.png`, alt: 'Infinity plunge pool at sunrise', type: 'reel' },
+const INSTA_POSTS = [
+  { id: 1, image: "https://images.unsplash.com/photo-1546853020-ca4909aef454?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Hanthana Mountain view at Margossa Residence" },
+  { id: 2, image: "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&q=80&w=600", type: "video", alt: "Temple of Tooth Relic experience" },
+  { id: 3, image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Ceylon Tea tasting at Margossa" },
+  { id: 4, image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Lush sanctuary forest walking trails" },
+  { id: 5, image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600", type: "video", alt: "Kandy Lake sunset stroll" },
+  { id: 6, image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=600", type: "carousel", alt: "Kandy Gem gallery and craftsmanship" },
+  { id: 7, image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Bahirawakanda Buddha Viewpoint" },
+  { id: 8, image: "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Elephant Foundation sanctuary experience" },
+  { id: 9, image: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Royal Palace Museum heritage artifacts" },
+  { id: 10, image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600", type: "video", alt: "Royal Botanical Gardens flora walk" }
 ]
 
 export function SocialFeed() {
   return (
-    <section id="gallery" className="bg-white py-20 md:py-24 w-full">
+    <section id="gallery" className="bg-[#FAF9F6] py-20 w-full">
       
       {/* 2-Column Flex Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 max-w-7xl mx-auto px-5 md:px-8 gap-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 gap-4">
         <div>
-          <span className="block text-xs tracking-[0.25em] text-gray-500 uppercase mb-1">
+          <span className="block text-xs tracking-[0.25em] text-gray-500 uppercase mb-2 font-semibold">
             LIFE AT MARGOSSA
           </span>
-          <h2 className="font-serif text-2xl md:text-3xl text-gray-900 uppercase">
-            Moments from the Hills
+          <h2 className="font-serif text-3xl md:text-4xl text-gray-900 uppercase tracking-wide">
+            MOMENTS FROM THE HILLS
           </h2>
         </div>
         <div>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/margossaresidencekandy/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-serif text-sm md:text-base text-gray-600 hover:text-amber-800 transition-colors cursor-pointer"
+            className="font-serif text-base md:text-lg text-gray-700 hover:text-amber-800 transition-colors cursor-pointer font-medium tracking-wide"
           >
             @margossa.residence
           </a>
         </div>
       </div>
 
-      {/* Grid Structure */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-7xl mx-auto px-5 md:px-8">
-        {POSTS.map((post, idx) => (
-          <a
-            key={idx}
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative aspect-square overflow-hidden rounded-sm block bg-gray-100"
-          >
-            <Image
-              src={post.src || '/placeholder.svg'}
-              alt={post.alt}
-              fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            
-            {/* Top-Right Badge Indicators */}
-            {post.type === 'reel' && (
-              <div className="absolute top-2.5 right-2.5 bg-black/45 text-white rounded-md p-1 z-10 flex items-center justify-center backdrop-blur-xs">
-                <Play className="size-3 fill-current text-white" />
-              </div>
-            )}
-            {post.type === 'carousel' && (
-              <div className="absolute top-2.5 right-2.5 bg-black/45 text-white rounded-md p-1.5 z-10 flex items-center justify-center backdrop-blur-xs">
-                <Layers className="size-3 text-white" />
-              </div>
-            )}
+      {/* Grid Display & Cards (5 Columns x 2 Rows) */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-7xl mx-auto px-4 sm:px-6">
+        {INSTA_POSTS.map((post, idx) => {
+          const isLast = idx === INSTA_POSTS.length - 1
 
-            {/* Subtle Hover Overlay */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <Camera className="size-6 text-white" strokeWidth={1.5} />
-            </div>
-          </a>
-        ))}
+          return (
+            <a
+              key={post.id}
+              href="https://www.instagram.com/margossaresidencekandy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative aspect-square overflow-hidden rounded-none block bg-gray-100 cursor-pointer"
+            >
+              <img
+                src={post.image}
+                alt={post.alt}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              
+              {/* Top-Right Badge Icons (for non-last cards) */}
+              {!isLast && post.type === 'video' && (
+                <div className="absolute top-2.5 right-2.5 bg-black/50 text-white rounded-sm p-1.5 z-10 flex items-center justify-center backdrop-blur-xs">
+                  <Video className="size-3.5 fill-current text-white" />
+                </div>
+              )}
+              {!isLast && post.type === 'carousel' && (
+                <div className="absolute top-2.5 right-2.5 bg-black/50 text-white rounded-sm p-1.5 z-10 flex items-center justify-center backdrop-blur-xs">
+                  <Layers className="size-3.5 text-white" />
+                </div>
+              )}
+
+              {/* Standard Hover Overlay (for non-last cards) */}
+              {!isLast && (
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <Camera className="size-6 text-white" strokeWidth={1.5} />
+                </div>
+              )}
+
+              {/* Special Overlay for 10th (Last) Card */}
+              {isLast && (
+                <div className="absolute inset-0 bg-black/45 group-hover:bg-black/60 transition-colors flex items-center justify-center p-3 text-center">
+                  <span className="text-white text-xs md:text-sm font-semibold uppercase tracking-widest leading-snug drop-shadow-sm">
+                    SEE MORE ON INSTAGRAM →
+                  </span>
+                </div>
+              )}
+            </a>
+          )
+        })}
       </div>
 
     </section>

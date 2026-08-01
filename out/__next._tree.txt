@@ -1,4 +1,15 @@
-:HL["/Margossa-Residence-Kandy/_next/static/chunks/0kcc0i2fp7r1y.css","style"]
+:HL["/Margossa-Residence-Kandy/_next/static/chunks/07~~6ukj41h9a.css","style"]
 :HL["/Margossa-Residence-Kandy/_next/static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/Margossa-Residence-Kandy/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"2qBMpEEKeFqVk15W7mXWg"}
+:HL["/Margossa-Residence-Kandy/MargossaKandyLogo.png","image"]
+:HL["https://images.unsplash.com/photo-1546853020-ca4909aef454?auto=format&fit=crop&q=80&w=600","image"]
+:HL["https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&q=80&w=600","image"]
+:HL["https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=600","image"]
+:HL["https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=600","image"]
+:HL["https://images.unsplash.com/photo-1588598046705-ea06159679f2?auto=format&fit=crop&q=80&w=600","image"]
+:HL["https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=600","image"]
+:HL["https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=600","image"]
+:HL["https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&q=80&w=600","image"]
+:HL["https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?auto=format&fit=crop&q=80&w=600","image"]
+:HL["https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"sVRcxU_gNFHV7BbaoI2G8"}
