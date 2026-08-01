@@ -72,30 +72,30 @@ export function ReviewsSection() {
   return (
     <section 
       id="reviews" 
-      style={{ backgroundColor: '#FAF9F6' }} 
-      className="py-20 w-full"
+      style={{ backgroundColor: '#EBE8DF' }} 
+      className="py-16 md:py-24 w-full"
     >
       
       {/* Part 1: Guest Reviews */}
       <div 
-        className="max-w-4xl mx-auto px-6 text-center mb-16 border-b border-gray-300/40 pb-16"
+        className="max-w-4xl mx-auto px-6 text-center mb-16 border-b border-gray-400/30 pb-16"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <span className="block text-xs tracking-[0.25em] text-gray-500 uppercase mb-2">
+        <span className="block text-xs tracking-[0.25em] text-gray-600 uppercase mb-2">
           GUEST REVIEWS
         </span>
         <h2 className="font-serif text-3xl md:text-4xl text-gray-900 tracking-wide uppercase mb-3">
           What our guests say about their villa stay
         </h2>
-        <p className="text-sm text-gray-500 mb-12 font-light">
+        <p className="text-sm text-gray-600 mb-12 font-light">
           Real guest experiences and reviews from their tranquil hillside stay
         </p>
 
         {/* Carousel Testimonial Card */}
         <div className="max-w-3xl mx-auto relative px-4">
           
-          {/* HARDCODED INLINE MIN-HEIGHT TO PREVENT ANY BOTTOM LAYOUT SHIFT */}
+          {/* Hardcoded Min-Height to avoid vertical shift */}
           <div 
             style={{ 
               minHeight: '180px', 
@@ -107,7 +107,7 @@ export function ReviewsSection() {
           >
             <blockquote 
               className={cn(
-                'font-serif text-base md:text-lg text-gray-700 italic leading-relaxed transition-opacity duration-300 ease-in-out',
+                'font-serif text-base md:text-lg text-gray-800 italic leading-relaxed transition-opacity duration-300 ease-in-out',
                 isFading ? 'opacity-0' : 'opacity-100'
               )}
             >
@@ -115,7 +115,7 @@ export function ReviewsSection() {
             </blockquote>
           </div>
 
-          {/* Controls Container (Fixed Location) */}
+          {/* Controls Container */}
           <div>
             <div className="text-yellow-500 text-xl flex justify-center gap-1 mb-4">
               {Array.from({ length: REVIEWS[activeIndex].rating }).map((_, i) => (
@@ -125,7 +125,7 @@ export function ReviewsSection() {
 
             <div className="flex items-center justify-center gap-2">
               <GoogleGLogo />
-              <span className="text-xs tracking-wider text-gray-600 font-medium uppercase">
+              <span className="text-xs tracking-wider text-gray-700 font-medium uppercase">
                 {REVIEWS[activeIndex].source}
               </span>
             </div>
@@ -161,8 +161,8 @@ export function ReviewsSection() {
       </div>
 
       {/* Part 2: Youtube Video Space */}
-      <div className="pt-10 pb-12 max-w-5xl mx-auto px-6">
-        <span className="block text-xs tracking-[0.25em] text-gray-500 uppercase text-center mb-3">
+      <div className="pt-6 pb-8 max-w-5xl mx-auto px-6">
+        <span className="block text-xs tracking-[0.25em] text-gray-600 uppercase text-center mb-3">
           AS SEEN ON YOUTUBE
         </span>
         <h3 className="font-serif text-2xl md:text-3xl text-gray-900 text-center mb-8 uppercase">
@@ -194,8 +194,8 @@ export function ReviewsSection() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-102"
               />
               <span className="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/30" />
-              <span className="absolute left-1/2 top-1/2 flex size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-900 transition-transform duration-300 group-hover:scale-110 shadow-lg border border-gray-100">
-                <Play className="ml-1 size-7 fill-current" />
+              <span className="absolute left-1/2 top-1/2 flex size-16 md:size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-900 transition-transform duration-300 group-hover:scale-110 shadow-lg border border-gray-100">
+                <Play className="ml-1 size-6 md:size-7 fill-current" />
               </span>
             </button>
           )}

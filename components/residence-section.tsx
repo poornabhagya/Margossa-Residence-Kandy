@@ -24,7 +24,7 @@ export function ResidenceSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         
         {/* Header Content */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 md:mb-14">
           <h2 className="font-serif text-3xl md:text-4xl text-gray-900 tracking-wide uppercase mb-3">
             A Residence Designed for Relaxation
           </h2>
@@ -33,54 +33,39 @@ export function ResidenceSection() {
           </p>
         </div>
 
-        {/* Outer Container */}
-        <div className="w-full max-w-6xl mx-auto px-4">
-          {/* Side-by-Side Flex Container with Inline Desktop Rule */}
-          <div 
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '2rem',
-              justifyContent: 'center'
-            }}
-          >
-            {CARDS.map((card, idx) => (
-              <div
-                key={idx}
-                style={{
-                  flex: '1 1 340px',
-                  maxWidth: '540px'
-                }}
-                className="bg-white border border-gray-100 shadow-sm flex flex-col justify-between overflow-hidden group hover:shadow-md transition-shadow duration-300"
-              >
-                {/* Fixed Image Height Container */}
-                <div style={{ height: '260px', width: '100%', overflow: 'hidden', position: 'relative' }}>
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    className="transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
+        {/* Responsive Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-5xl mx-auto">
+          {CARDS.map((card, idx) => (
+            <div
+              key={idx}
+              className="bg-white border border-gray-100 shadow-sm flex flex-col justify-between overflow-hidden group hover:shadow-md transition-shadow duration-300 rounded-sm"
+            >
+              {/* Fixed Image Height Container */}
+              <div className="h-64 sm:h-72 md:h-80 w-full overflow-hidden relative">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
 
-                {/* Content Body */}
-                <div className="p-6 md:p-8 flex flex-col flex-1 justify-between text-center">
-                  <div>
-                    <h3 className="font-serif text-2xl text-gray-900 mb-3">{card.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-light">{card.description}</p>
-                  </div>
-                  <div>
-                    <Link 
-                      className="inline-block border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-6 py-2.5 text-xs font-semibold uppercase tracking-widest transition-all rounded-none" 
-                      href="/contact"
-                    >
-                      BOOK NOW
-                    </Link>
-                  </div>
+              {/* Content Body */}
+              <div className="p-6 md:p-8 flex flex-col flex-1 justify-between text-center">
+                <div>
+                  <h3 className="font-serif text-2xl text-gray-900 mb-3">{card.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 font-light">{card.description}</p>
+                </div>
+                <div>
+                  <Link 
+                    className="inline-block border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-3 text-xs font-semibold uppercase tracking-widest transition-all rounded-none" 
+                    href="/contact"
+                  >
+                    BOOK NOW
+                  </Link>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
       </div>

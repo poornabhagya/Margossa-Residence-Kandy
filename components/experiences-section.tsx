@@ -92,87 +92,83 @@ export function ExperiencesSection() {
   return (
     <section 
       id="experiences" 
-      style={{ 
-        position: 'relative', 
-        width: '100%', 
-        paddingTop: '80px', 
-        paddingBottom: '90px', 
-        backgroundColor: '#FAF9F6', 
-        display: 'block',
-        clear: 'both'
-      }}
+      className="relative w-full py-16 md:py-24 bg-[#FAF9F6] block clear-both"
     >
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px' }}>
+      <div className="max-w-6xl mx-auto px-4">
         
         {/* 1. TOP HEADER CONTENT */}
-        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.25em', color: '#92400e', fontWeight: '600', marginBottom: '12px' }}>
+        <div className="text-center mb-10 md:mb-12">
+          <p className="text-xs uppercase tracking-[0.25em] text-[#92400e] font-semibold mb-3">
             EXPERIENCES
           </p>
-          <h2 style={{ fontFamily: 'serif', fontSize: '32px', color: '#111827', textTransform: 'uppercase', marginBottom: '16px', letterSpacing: '0.05em' }}>
+          <h2 className="font-serif text-2xl md:text-4xl text-gray-900 uppercase tracking-wide mb-4">
             DISCOVER THE SOUL OF KANDY
           </h2>
-          <p style={{ color: '#4b5563', fontSize: '14px', maxWidth: '750px', margin: '0 auto', lineHeight: '1.7', fontWeight: '300' }}>
+          <p className="text-gray-600 text-sm max-w-3xl mx-auto leading-relaxed font-light">
             Step beyond the ordinary and immerse yourself in the timeless charm of Sri Lanka's cultural capital. Wander through ancient temples, discover vibrant local markets, savour authentic cuisine, visit renowned tea plantations, and uncover breathtaking landscapes—all while returning to the comfort and tranquillity of Margossa Residence.
           </p>
         </div>
 
-        {/* 2. 3D CAROUSEL IMAGES CONTAINER */}
-        <div style={{ position: 'relative', width: '100%', maxWidth: '1000px', margin: '0 auto', minHeight: '380px' }}>
+        {/* 2. RESPONSIVE CAROUSEL IMAGES CONTAINER */}
+        <div className="relative w-full max-w-[1000px] mx-auto">
           
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', width: '100%' }}>
+          <div className="flex items-center justify-center relative w-full">
             
-            {/* Left Preview Image */}
-            <div 
-              style={{ 
-                width: '28%', 
-                height: '300px', 
-                opacity: 0.4, 
-                borderRadius: '4px', 
-                overflow: 'hidden', 
-                boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
-                marginRight: '-40px',
-                zIndex: 1
-              }}
-            >
-              <img src={prevItem.image} alt={prevItem.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            {/* Left Preview Image (Hidden on Mobile) */}
+            <div className="hidden md:block w-[28%] h-[300px] opacity-40 rounded overflow-hidden shadow-xs -mr-[40px] z-1">
+              <img src={prevItem.image} alt={prevItem.title} className="w-full h-full object-cover" />
             </div>
 
-            {/* CENTER ACTIVE IMAGE */}
+            {/* CENTER ACTIVE IMAGE - STRICT HARDCODED INLINE HEIGHT */}
             <div 
-              style={{ 
-                width: '52%', 
-                height: '380px', 
-                borderRadius: '6px', 
-                overflow: 'hidden', 
+              style={{
+                width: '100%',
+                height: '280px',
+                maxHeight: '280px',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                position: 'relative',
                 boxShadow: '0 20px 25px -5px rgba(0,0,0,0.15)',
                 zIndex: 10,
-                position: 'relative'
+                backgroundColor: '#1f2937'
               }}
+              className="md:w-[52%] md:!h-[380px] md:!max-h-[380px]"
             >
-              <img src={activeItem.image} alt={activeItem.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img 
+                src={activeItem.image} 
+                alt={activeItem.title} 
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block'
+                }} 
+              />
 
               {/* Left Arrow Button */}
               <button
                 onClick={prevSlide}
+                type="button"
                 style={{
                   position: 'absolute',
-                  left: '16px',
+                  left: '12px',
                   top: '50%',
                   transform: 'translateY(-50%)',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '50%',
-                  backgroundColor: '#ffffff',
+                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
                   border: 'none',
-                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: '18px',
-                  zIndex: 20
+                  color: '#111827',
+                  zIndex: 30
                 }}
+                aria-label="Previous slide"
               >
                 ←
               </button>
@@ -180,55 +176,62 @@ export function ExperiencesSection() {
               {/* Right Arrow Button */}
               <button
                 onClick={nextSlide}
+                type="button"
                 style={{
                   position: 'absolute',
-                  right: '16px',
+                  right: '12px',
                   top: '50%',
                   transform: 'translateY(-50%)',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '50%',
-                  backgroundColor: '#ffffff',
+                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
                   border: 'none',
-                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: '18px',
-                  zIndex: 20
+                  color: '#111827',
+                  zIndex: 30
                 }}
+                aria-label="Next slide"
               >
                 →
               </button>
             </div>
 
-            {/* Right Preview Image */}
-            <div 
-              style={{ 
-                width: '28%', 
-                height: '300px', 
-                opacity: 0.4, 
-                borderRadius: '4px', 
-                overflow: 'hidden', 
-                boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
-                marginLeft: '-40px',
-                zIndex: 1
-              }}
-            >
-              <img src={nextItem.image} alt={nextItem.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            {/* Right Preview Image (Hidden on Mobile) */}
+            <div className="hidden md:block w-[28%] h-[300px] opacity-40 rounded overflow-hidden shadow-xs -ml-[40px] z-1">
+              <img src={nextItem.image} alt={nextItem.title} className="w-full h-full object-cover" />
             </div>
 
           </div>
 
         </div>
 
-        {/* 3. BOTTOM ACTIVE TEXT CONTENT */}
-        <div style={{ textAlign: 'center', marginTop: '36px', maxWidth: '700px', margin: '36px auto 0' }}>
-          <h3 style={{ fontFamily: 'serif', fontSize: '24px', color: '#111827', marginBottom: '12px' }}>
+        {/* 3. BOTTOM ACTIVE TEXT CONTENT (INLINE HARDCODED MIN-HEIGHT TO LOCK LAYOUT) */}
+        <div 
+          style={{ 
+            minHeight: '130px', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'flex-start', 
+            alignItems: 'center',
+            textAlign: 'center',
+            marginTop: '24px',
+            maxWidth: '700px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            paddingLeft: '8px',
+            paddingRight: '8px'
+          }}
+        >
+          <h3 className="font-serif text-xl md:text-2xl text-gray-900 mb-2">
             {activeItem.title}
           </h3>
-          <p style={{ color: '#4b5563', fontSize: '14px', lineHeight: '1.6', fontWeight: '300' }}>
+          <p className="text-gray-600 text-sm leading-relaxed font-light">
             {activeItem.description}
           </p>
         </div>

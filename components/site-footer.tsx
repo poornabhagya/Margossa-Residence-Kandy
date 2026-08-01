@@ -38,13 +38,13 @@ const INSTAGRAM_ACCOUNT_URL = "https://www.instagram.com/margossaresidencekandy/
 export function SiteFooter() {
   return (
     <footer id="contact" className="bg-[#E3E5D8] text-gray-800 w-full border-t border-gray-300/60">
-      <div className="mx-auto max-w-7xl px-6 py-16 items-start">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         
-        {/* 4-Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        {/* 4-Column Responsive Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center sm:text-left items-start">
           
-          {/* Column 1: Properly Scaled Full Logo */}
-          <div className="flex flex-col items-start justify-start">
+          {/* Column 1: Resized Compact Logo */}
+          <div className="flex flex-col items-center sm:items-start justify-center">
             <a href="/" className="inline-block transition-opacity hover:opacity-90">
               <div style={{ width: '140px', height: 'auto' }}>
                 <Image
@@ -99,13 +99,13 @@ export function SiteFooter() {
           </div>
 
           {/* Column 4: Socials & Connected Google Reviews Badge */}
-          <div>
+          <div className="flex flex-col items-center sm:items-start">
             <h4 className="text-[#8C6D3B] uppercase text-xs tracking-[0.2em] font-semibold mb-4">
               Follow us
             </h4>
             
             {/* Social Icons */}
-            <div className="flex gap-3 mb-6">
+            <div className="flex gap-3 mb-6 justify-center sm:justify-start">
               {[
                 { icon: FacebookIcon, label: 'Facebook', href: 'https://facebook.com' },
                 { icon: InstagramIcon, label: 'Instagram', href: INSTAGRAM_ACCOUNT_URL },
