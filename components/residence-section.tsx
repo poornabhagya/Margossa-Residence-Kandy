@@ -9,12 +9,14 @@ const CARDS = [
     image: `${basePath}/room-sky-pavilion.png`,
     description:
       'Margossa Suite is our signature retreat, thoughtfully designed with contemporary elegance, spacious interiors, and a private balcony overlooking the lush hills of Kandy. A perfect blend of comfort, style, and tranquillity for an unforgettable stay.',
+    exploreHref: `${basePath}/our-resort#margossa-suite`,
   },
   {
     title: 'Neem Suite',
     image: `${basePath}/room-sky-tented.png`,
     description:
       'Neem Suite offers a peaceful escape with warm, sophisticated interiors and serene views of the surrounding greenery. Designed for relaxation, it provides an intimate setting where modern comfort meets the natural beauty of Kandy.',
+    exploreHref: `${basePath}/our-resort#neem-suite`,
   },
 ]
 
@@ -55,9 +57,15 @@ export function ResidenceSection() {
                   <h3 className="font-serif text-2xl text-gray-900 mb-3">{card.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-6 font-light">{card.description}</p>
                 </div>
-                <div>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link 
-                    className="inline-block border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-3 text-xs font-semibold uppercase tracking-widest transition-all rounded-none" 
+                    className="w-full sm:w-auto inline-block border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-5 py-2.5 text-xs font-semibold uppercase tracking-widest transition-all rounded-none text-center" 
+                    href={card.exploreHref}
+                  >
+                    EXPLORE SUITE &rarr;
+                  </Link>
+                  <Link 
+                    className="w-full sm:w-auto inline-block border border-gray-900 bg-gray-900 text-white hover:bg-black px-6 py-2.5 text-xs font-semibold uppercase tracking-widest transition-all rounded-none text-center" 
                     href="/contact"
                   >
                     BOOK NOW

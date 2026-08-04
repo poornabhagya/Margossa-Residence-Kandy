@@ -10,7 +10,7 @@ import { SiteFooter } from '@/components/site-footer'
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background" suppressHydrationWarning>
       <SiteHeader />
       <HeroSection />
       <WelcomeSection />

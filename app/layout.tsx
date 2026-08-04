@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable} bg-background overflow-x-hidden w-full`}>
+    <html lang="en" className={`${inter.variable} ${cormorant.variable} bg-background overflow-x-hidden w-full`} suppressHydrationWarning>
       <body className="font-sans antialiased overflow-x-hidden w-full relative" suppressHydrationWarning>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

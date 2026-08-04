@@ -74,6 +74,7 @@ export function ReviewsSection() {
       id="reviews" 
       style={{ backgroundColor: '#EBE8DF' }} 
       className="py-16 md:py-24 w-full"
+      suppressHydrationWarning
     >
       
       {/* Part 1: Guest Reviews */}
@@ -81,6 +82,7 @@ export function ReviewsSection() {
         className="max-w-4xl mx-auto px-6 text-center mb-16 border-b border-gray-400/30 pb-16"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
+        suppressHydrationWarning
       >
         <span className="block text-xs tracking-[0.25em] text-gray-600 uppercase mb-2">
           GUEST REVIEWS

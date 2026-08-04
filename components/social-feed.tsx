@@ -1,21 +1,22 @@
 import { Camera, Video, Layers } from 'lucide-react'
+import { basePath } from '@/lib/utils'
 
 const INSTA_POSTS = [
-  { id: 1, image: "https://images.unsplash.com/photo-1546853020-ca4909aef454?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Hanthana Mountain view at Margossa Residence" },
-  { id: 2, image: "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&q=80&w=600", type: "video", alt: "Temple of Tooth Relic experience" },
-  { id: 3, image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Ceylon Tea tasting at Margossa" },
-  { id: 4, image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Lush sanctuary forest walking trails" },
-  { id: 5, image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600", type: "video", alt: "Kandy Lake sunset stroll" },
-  { id: 6, image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=600", type: "carousel", alt: "Kandy Gem gallery and craftsmanship" },
-  { id: 7, image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Bahirawakanda Buddha Viewpoint" },
-  { id: 8, image: "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Elephant Foundation sanctuary experience" },
-  { id: 9, image: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?auto=format&fit=crop&q=80&w=600", type: "image", alt: "Royal Palace Museum heritage artifacts" },
+  { id: 1, image: `${basePath}/Margossa-Residence-Kandy/instaImgs/1.png`, type: "image", alt: "Hanthana Mountain view at Margossa Residence" },
+  { id: 2, image: `${basePath}/Margossa-Residence-Kandy/instaImgs/2.png`, type: "image", alt: "Temple of Tooth Relic experience" },
+  { id: 3, image: `${basePath}/Margossa-Residence-Kandy/instaImgs/3.png`, type: "image", alt: "Ceylon Tea tasting at Margossa" },
+  { id: 4, image: `${basePath}/Margossa-Residence-Kandy/instaImgs/4.png`, type: "image", alt: "Lush sanctuary forest walking trails" },
+  { id: 5, image: `${basePath}/Margossa-Residence-Kandy/instaImgs/5.png`, type: "image", alt: "Kandy Lake sunset stroll" },
+  { id: 6, image: `${basePath}/Margossa-Residence-Kandy/instaImgs/6.png`, type: "image", alt: "Kandy Gem gallery and craftsmanship" },
+  { id: 7, image: `${basePath}/Margossa-Residence-Kandy/instaImgs/7.png`, type: "image", alt: "Bahirawakanda Buddha Viewpoint" },
+  { id: 8, image: `${basePath}/Margossa-Residence-Kandy/instaImgs/8.png`, type: "image", alt: "Elephant Foundation sanctuary experience" },
+  { id: 9, image: `${basePath}/Margossa-Residence-Kandy/instaImgs/9.png`, type: "image", alt: "Royal Palace Museum heritage artifacts" },
   { id: 10, image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600", type: "video", alt: "Royal Botanical Gardens flora walk" }
 ]
 
 export function SocialFeed() {
   return (
-    <section id="gallery" className="bg-[#FAF9F6] py-20 w-full">
+    <section id="gallery" className="bg-[#FAF9F6] py-20 w-full" suppressHydrationWarning>
       
       {/* 2-Column Flex Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 gap-4">

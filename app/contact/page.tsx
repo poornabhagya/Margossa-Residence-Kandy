@@ -69,17 +69,18 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#FAF9F6]">
+    <main className="min-h-screen bg-[#FAF9F6]" suppressHydrationWarning>
       <SiteHeader />
 
       {/* 1. Hero Header Section */}
       <section className="relative h-[320px] md:h-[400px] w-full overflow-hidden flex items-center justify-center pt-20">
         <Image
-          src={`${basePath}/hero-2.png`}
-          alt="Margossa Residence hillside landscape at dusk"
+          src={`${basePath}/contactUsImg.webp`}
+          alt="Margossa Residence Contact Us background"
           fill
           priority
-          className="object-cover"
+          sizes="100vw"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/45" />
         <div className="relative z-10 text-center px-4 mt-6">
@@ -235,18 +236,29 @@ export default function ContactPage() {
       <section className="max-w-7xl mx-auto px-6 mb-16 w-full">
         <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-200/80 h-[400px] md:h-[450px] w-full relative group bg-gray-50">
           
-          {/* Floating Location Badge (Overlay) */}
-          <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-md border border-gray-100 flex flex-col z-10">
-            <span className="text-xs font-semibold tracking-wider text-gray-900 uppercase">
-              MARGOSSA RESIDENCE &bull; KANDY
-            </span>
-            <span className="text-[10px] text-gray-500 block mt-0.5 font-light">
-              Sri Lanka
-            </span>
+          {/* Floating Location Badge with "Get Directions" Button */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-xl shadow-md border border-gray-100 flex flex-col sm:flex-row sm:items-center gap-3 z-10">
+            <div>
+              <span className="text-xs font-semibold tracking-wider text-gray-900 uppercase block">
+                MARGOSSA RESIDENCE &bull; KANDY
+              </span>
+              <span className="text-[10px] text-gray-500 block mt-0.5 font-light">
+                Kandy, Sri Lanka
+              </span>
+            </div>
+            <a
+              href="https://www.google.com/maps/place/Margossa+Residence+Kandy/@7.3041429,80.6255913,17z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 bg-amber-900 hover:bg-amber-950 text-white text-[11px] font-semibold uppercase tracking-wider px-3 py-1.5 rounded-lg transition-colors shadow-xs"
+            >
+              <Navigation className="size-3" />
+              Get Directions
+            </a>
           </div>
 
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126588.66668798993!2d80.56543881881881!3d7.294438831117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae366265731307b%3A0xc39f97be982361!2sKandy%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.271391584852!2d80.6255913!3d7.3041429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae369a5710e9a93%3A0x95bd998cf9ca48e6!2sMargossa%20Residence%20Kandy!5e0!3m2!1sen!2slk!4v1711900000000!5m2!1sen!2slk" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
@@ -254,6 +266,7 @@ export default function ContactPage() {
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
             title="Margossa Residence Kandy Location Map"
+            className="w-full h-[400px] md:h-[450px] rounded-2xl border-0"
           />
         </div>
       </section>

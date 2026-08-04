@@ -4,10 +4,9 @@ import { basePath } from '@/lib/utils'
 
 const QUICK_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'Our Resort', href: '/#residence' },
-  { label: 'Experiences', href: '/#experiences' },
-  { label: 'Gallery', href: '/#gallery' },
-  { label: 'About Us', href: '/#welcome' },
+  { label: 'Our Resort', href: '/our-resort' },
+  { label: 'Experiences', href: '/experiences' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Contact Us', href: '/contact' },
 ]
 
@@ -25,19 +24,16 @@ const InstagramIcon = () => (
   </svg>
 )
 
-const TwitterIcon = () => (
-  <svg className="size-4" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-  </svg>
-)
 
-const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=margossa+residence+kandy+tripadvisor&sca_esv=b83e30d655369951&hl=en&sxsrf=APpeQnuGRGlbvOzPHJJY_YveI1vL-Kzg-A%3A1785391885093&source=hp&ei=DetqapbxAeDH4-EPwrSsmQs&iflsig=ABILxe8AAAAAamr5HRHEMXbz5Wz3sZpx6a5E73ASfexL&oq=margossa+residence+kandy+tr&gs_lp=Egdnd3Mtd2l6IhttYXJnb3NzYSByZXNpZGVuY2Uga2FuZHkgdHIqAggAMgUQIRigATIFECEYoAEyBRAhGKABMgUQIRigATIFECEYnwUyBRAhGJ8FMgUQIRifBUidM1AAWM8qcAJ4AJABAJgBoAGgAZYNqgEEMTAuNrgBA8gBAPgBAZgCEqACkg6oAgrCAgQQIxgnwgIKECMYyQIY8AUYJ8ICEBAuGIAEGIoFGEMYxwEY0QPCAhAQABiABBiKBRhDGLEDGIMBwgIKEAAYgAQYigUYQ8ICCxAAGIAEGLEDGIMBwgILEAAYgAQYigUYsQPCAggQABiABBixA8ICChAjGPAFGMkCGCfCAgsQABiABBiKBRiRAsICChAuGIAEGIoFGEPCAgUQABiABMICBxAjGOoCGCfCAg0QLhjHARjRAxjqAhgnwgINECMYyQIY8AUY6gIYJ8ICDhAAGIAEGIoFGLEDGIMBwgIHECMY8AUYJ8ICFBAuGIAEGLEDGMcBGK8BGJgFGJkFwgIREC4YgAQYigUYsQMYxwEYrwHCAg0QLhiABBiKBRhDGLEDwgIFEC4YgATCAggQLhiABBixA8ICERAuGK8BGMcBGIAEGJgFGJkFwgIOEC4YgAQxwEYrwEYmAXCAgkQLhgKGAsYgATCAgkQABiABBgKGAvCAhUQLhgKGAsYrwEYxwEYgAQYmAUYmQXCAgQQABgewgIFEAAY7wXCAggQABiABBiiBMICBhAAGBYYHsICCBAAGIkFGKIEwgILEAAYgAQYigUYhgPCAgQQIRgVmAME8QXEr0qTIabmO5IHBDcuMTGgB8eoAbIHBDUuMTG4B4gOwgcKMC41LjExLjEuMcgHVYAIAQ&sclient=gws-wiz#lrd=0x3ae369a5710e9a93:0x95bd998cf9ca48e6,1"
+
+const FACEBOOK_ACCOUNT_URL = "https://www.facebook.com/profile.php?id=61562008192823"
+const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=margossa+residence+kandy&sca_esv=e56dd46b96dbd51c&bih=945&biw=1920&hl=en&sxsrf=APpeQns03ffNVvMZ1liRe7R04To4CdrqGw%3A1785757915034&source=hp&ei=2oBwar_mPKGkhvcP1IvWqAs&iflsig=ABILxe8AAAAAanCO64N87vpf2TE0Udk1TxUtOu0hVwi6&gs_ssp=eJwFwUEKgCAQAEC6Bt07dunsimluT-gXm7tFaAYKUb9vpu3UobR-ds-JY4JmGeE1JMYh2VmDIKFZ4EW7MaIPOwaavLi1v6gcd600FKknSw4yRMr8_bgEGR8&oq=margossa+&gs_lp=Egdnd3Mtd2l6IgltYXJnb3NzYSAqAggBMgQQIxgnMg4QLhiABBjHARivARiYBTIEEAAYHjIEEAAYHjIEEAAYHjIEEAAYHjICECYyBRAAGO8FMgUQABjvBTIIEAAYgAQYogRIvSBQAFjSDXABeACQAQCYAYcBoAHQCKoBAzIuOLgBA8gBAPgBAZgCC6ACiQmoAgrCAgsQABiABBixAxiDAcICCBAAGIAEGLEDwgIREC4YgAQYsQMYgwEYxwEY0QPCAgcQIxjqAhgnwgINEC4YxwEY0QMY6gIYJ8ICDRAjGPAFGMkCGOoCGCfCAg0QIxjJAhjwBRjqAhgnwgIKECMY8AUY6gIYJ8ICBBAuGCfCAg4QABiABBiKBRixAxiDAcICCxAAGIAEGIoFGLEDwgIEEAAYA8ICBxAjGPAFGCfCAhQQLhiABBixAxjHARivARiYBRiZBcICERAuGIAEGIoFGLEDGMcBGK8BwgIFEAAYgATCAggQLhiABBixA8ICCxAuGIAEGLEDGIMBwgIFEC4YgATCAhEQLhivARjHARiABBiYBRiZBcICCRAuGAoYCxiABMICCRAAGIAEGAoYC8ICFRAuGAoYCxivARjHARiABBiYBRiZBZgDBfEFMznwrMhVhTOSBwMyLjmgB6KNAbIHAzEuObgHhAnCBwUwLjQuN8gHJoAIAQ&sclient=gws-wiz#lrd=0x3ae369a5710e9a93:0x95bd998cf9ca48e6,1"
 
 const INSTAGRAM_ACCOUNT_URL = "https://www.instagram.com/margossaresidencekandy/"
 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="bg-[#E3E5D8] text-gray-800 w-full border-t border-gray-300/60">
+    <footer id="contact" className="bg-[#E3E5D8] text-gray-800 w-full border-t border-gray-300/60" suppressHydrationWarning>
       <div className="mx-auto max-w-7xl px-6 py-16">
         
         {/* 4-Column Responsive Layout */}
@@ -107,9 +103,8 @@ export function SiteFooter() {
             {/* Social Icons */}
             <div className="flex gap-3 mb-6 justify-center sm:justify-start">
               {[
-                { icon: FacebookIcon, label: 'Facebook', href: 'https://facebook.com' },
+                { icon: FacebookIcon, label: 'Facebook', href: FACEBOOK_ACCOUNT_URL },
                 { icon: InstagramIcon, label: 'Instagram', href: INSTAGRAM_ACCOUNT_URL },
-                { icon: TwitterIcon, label: 'Twitter', href: 'https://twitter.com' },
               ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
