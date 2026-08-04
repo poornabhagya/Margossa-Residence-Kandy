@@ -9,14 +9,14 @@ const CARDS = [
     image: `${basePath}/room-sky-pavilion.png`,
     description:
       'Margossa Suite is our signature retreat, thoughtfully designed with contemporary elegance, spacious interiors, and a private balcony overlooking the lush hills of Kandy. A perfect blend of comfort, style, and tranquillity for an unforgettable stay.',
-    exploreHref: `${basePath}/our-resort#margossa-suite`,
+    exploreHref: '/our-resort#margossa-suite',
   },
   {
     title: 'Neem Suite',
     image: `${basePath}/room-sky-tented.png`,
     description:
       'Neem Suite offers a peaceful escape with warm, sophisticated interiors and serene views of the surrounding greenery. Designed for relaxation, it provides an intimate setting where modern comfort meets the natural beauty of Kandy.',
-    exploreHref: `${basePath}/our-resort#neem-suite`,
+    exploreHref: '/our-resort#neem-suite',
   },
 ]
 

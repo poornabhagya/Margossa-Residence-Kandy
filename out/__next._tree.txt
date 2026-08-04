@@ -12,4 +12,4 @@
 :HL["/Margossa-Residence-Kandy/Margossa-Residence-Kandy/instaImgs/8.png","image"]
 :HL["/Margossa-Residence-Kandy/Margossa-Residence-Kandy/instaImgs/9.png","image"]
 :HL["https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"mnS6MwQvSv5L7CE6jpypu"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"rimugENLwoetC5Qd6flQQ"}
