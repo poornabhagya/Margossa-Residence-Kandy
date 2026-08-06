@@ -6,14 +6,14 @@ import { basePath } from '@/lib/utils'
 const CARDS = [
   {
     title: 'Margossa Suite',
-    image: `${basePath}/room-sky-pavilion.png`,
+    image: `${basePath}/suiteImgs/MargossaSuite.webp`,
     description:
       'Margossa Suite is our signature retreat, thoughtfully designed with contemporary elegance, spacious interiors, and a private balcony overlooking the lush hills of Kandy. A perfect blend of comfort, style, and tranquillity for an unforgettable stay.',
     exploreHref: '/our-resort#margossa-suite',
   },
   {
     title: 'Neem Suite',
-    image: `${basePath}/room-sky-tented.png`,
+    image: `${basePath}/suiteImgs/NeemSuite.webp`,
     description:
       'Neem Suite offers a peaceful escape with warm, sophisticated interiors and serene views of the surrounding greenery. Designed for relaxation, it provides an intimate setting where modern comfort meets the natural beauty of Kandy.',
     exploreHref: '/our-resort#neem-suite',
@@ -40,10 +40,10 @@ export function ResidenceSection() {
           {CARDS.map((card, idx) => (
             <div
               key={idx}
-              className="bg-white border border-gray-100 shadow-sm flex flex-col justify-between overflow-hidden group hover:shadow-md transition-shadow duration-300 rounded-sm"
+              className="bg-white border border-gray-100 shadow-sm flex flex-col justify-between overflow-hidden group hover:shadow-md transition-shadow duration-300 rounded-2xl"
             >
-              {/* Fixed Image Height Container */}
-              <div className="h-64 sm:h-72 md:h-80 w-full overflow-hidden relative">
+              {/* Image Container with Aspect Ratio & Rounded Top */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-t-2xl">
                 <img
                   src={card.image}
                   alt={card.title}

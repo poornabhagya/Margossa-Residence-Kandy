@@ -1,89 +1,138 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn, basePath } from '@/lib/utils'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 
-const GALLERY_IMAGES = [
+// 12 Main Grid Images (9 Horizontal + 3 Vertical)
+const MAIN_GRID_IMAGES = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
-    alt: "Margossa Residence Kandy Exterior View",
+    src: `${basePath}/gallery/MainGrid/horizontal/0U4A1985.webp`,
+    alt: "Margossa Residence Living Space & Architecture",
     aspectRatio: "aspect-[16/10]"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
-    alt: "Margossa Suite Bedroom Interior",
+    src: `${basePath}/gallery/MainGrid/horizontal/0U4A1994.webp`,
+    alt: "Luxurious Bedroom Interior with Garden View",
     aspectRatio: "aspect-[4/3]"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1546853020-ca4909aef454?auto=format&fit=crop&w=1200&q=80",
-    alt: "Hanthana Mountain View from Residence Balcony",
+    src: `${basePath}/gallery/MainGrid/vertical/0U4A2017.webp`,
+    alt: "Veranda & Traditional Architectural Details",
     aspectRatio: "aspect-[3/4]"
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80",
-    alt: "Neem Suite Open-Air Sky Bathroom",
+    src: `${basePath}/gallery/MainGrid/horizontal/0U4A2026.webp`,
+    alt: "Hillside Terrace View of Kandy Mountains",
     aspectRatio: "aspect-[4/3]"
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80",
-    alt: "Relaxed Hillside Dining Table Setup",
+    src: `${basePath}/gallery/MainGrid/horizontal/0U4A2031.webp`,
+    alt: "Serene Garden Pathway & Tropical Flora",
     aspectRatio: "aspect-[16/10]"
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
-    alt: "Luxury Bathroom Vanity & Marble Details",
+    src: `${basePath}/gallery/MainGrid/vertical/0U4A2024.webp`,
+    alt: "Open-Air Sky Bathing Experience",
     aspectRatio: "aspect-[3/4]"
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80",
-    alt: "Tranquil Courtyard & Antique Wooden Doors",
+    src: `${basePath}/gallery/MainGrid/horizontal/0U4A2041.webp`,
+    alt: "Fine Dining & Breakfast Setup on Balcony",
     aspectRatio: "aspect-[4/3]"
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80",
-    alt: "Margossa Suite Living Lounge & Sofa",
+    src: `${basePath}/gallery/MainGrid/horizontal/0U4A2063.webp`,
+    alt: "Elegantly Appointed Suite Lounge",
     aspectRatio: "aspect-[16/10]"
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1200&q=80",
-    alt: "Temple of the Tooth Heritage Scene",
+    src: `${basePath}/gallery/MainGrid/vertical/0U4A2070.webp`,
+    alt: "Historic Antique Wood Details & Courtyard",
     aspectRatio: "aspect-[3/4]"
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=80",
-    alt: "Fresh Ceylon Breakfast & Artisanal Tea",
+    src: `${basePath}/gallery/MainGrid/horizontal/0U4A2078.webp`,
+    alt: "Spacious En-Suite Bathroom Vanity",
     aspectRatio: "aspect-[4/3]"
   },
   {
     id: 11,
-    src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
-    alt: "Private Terrace Overlooking Kandy Valley",
+    src: `${basePath}/gallery/MainGrid/horizontal/0U4A2095.webp`,
+    alt: "Peaceful Evening Ambience on Private Terrace",
     aspectRatio: "aspect-[16/10]"
   },
   {
     id: 12,
-    src: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80",
-    alt: "Hillside Sunset Terrace Ambient Lighting",
+    src: `${basePath}/gallery/MainGrid/horizontal/0U4A9379.webp`,
+    alt: "Panoramic Views of Sri Lankan Nature",
     aspectRatio: "aspect-[4/3]"
   }
 ]
 
+// 8 Extra PopupBox Images
+const POPUP_BOX_IMAGES = [
+  {
+    id: 13,
+    src: `${basePath}/gallery/PopupBox/0U4A2055.webp`,
+    alt: "Margossa Suite Master Bedroom & Lounge Area",
+  },
+  {
+    id: 14,
+    src: `${basePath}/gallery/PopupBox/0U4A2115.webp`,
+    alt: "Boutique Residence Exterior Architectural View",
+  },
+  {
+    id: 15,
+    src: `${basePath}/gallery/PopupBox/0U4A2123.webp`,
+    alt: "Sun-Drenched Garden Patio & Seating",
+  },
+  {
+    id: 16,
+    src: `${basePath}/gallery/PopupBox/0U4A2132.webp`,
+    alt: "Private Balcony Overlooking Hanthana Range",
+  },
+  {
+    id: 17,
+    src: `${basePath}/gallery/PopupBox/0U4A2136.webp`,
+    alt: "Luxury Bathroom Marble Vanity & Amenities",
+  },
+  {
+    id: 18,
+    src: `${basePath}/gallery/PopupBox/0U4A2149.webp`,
+    alt: "Artisanal Ceylon Dining & Morning Tea",
+  },
+  {
+    id: 19,
+    src: `${basePath}/gallery/PopupBox/0U4A2172.webp`,
+    alt: "Tranquil Courtyard Dusk Lighting",
+  },
+  {
+    id: 20,
+    src: `${basePath}/gallery/PopupBox/0U4A9314.webp`,
+    alt: "Lush Tropical Surroundings & Villa Entrance",
+  }
+]
+
+// Combined 20 Images Array for Full Lightbox Navigation
+const FULL_GALLERY_IMAGES = [...MAIN_GRID_IMAGES, ...POPUP_BOX_IMAGES]
+
 export default function GalleryPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
+  const thumbnailRefs = useRef<(HTMLButtonElement | null)[]>([])
 
   const openLightbox = (index: number) => {
     setActiveIndex(index)
@@ -95,12 +144,47 @@ export default function GalleryPage() {
   }
 
   const nextImage = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % GALLERY_IMAGES.length)
+    setActiveIndex((prev) => (prev + 1) % FULL_GALLERY_IMAGES.length)
   }, [])
 
   const prevImage = useCallback(() => {
-    setActiveIndex((prev) => (prev - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length)
+    setActiveIndex((prev) => (prev - 1 + FULL_GALLERY_IMAGES.length) % FULL_GALLERY_IMAGES.length)
   }, [])
+
+  // Lock background scroll when modal is open
+  useEffect(() => {
+    if (lightboxOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [lightboxOpen])
+
+  // Preload next and previous images when lightbox is open for instant transitions
+  useEffect(() => {
+    if (!lightboxOpen) return
+    const nextIdx = (activeIndex + 1) % FULL_GALLERY_IMAGES.length
+    const prevIdx = (activeIndex - 1 + FULL_GALLERY_IMAGES.length) % FULL_GALLERY_IMAGES.length
+
+    const img1 = new Image()
+    img1.src = FULL_GALLERY_IMAGES[nextIdx].src
+    const img2 = new Image()
+    img2.src = FULL_GALLERY_IMAGES[prevIdx].src
+  }, [lightboxOpen, activeIndex])
+
+  // Auto-scroll active thumbnail into view inside thumbnail strip
+  useEffect(() => {
+    if (lightboxOpen && thumbnailRefs.current[activeIndex]) {
+      thumbnailRefs.current[activeIndex]?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      })
+    }
+  }, [lightboxOpen, activeIndex])
 
   // Keyboard controls for Lightbox
   useEffect(() => {
@@ -139,7 +223,7 @@ export default function GalleryPage() {
       {/* Clean Masonry-Style Grid Display */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-          {GALLERY_IMAGES.map((item, index) => (
+          {MAIN_GRID_IMAGES.map((item, index) => (
             <div
               key={item.id}
               onClick={() => openLightbox(index)}
@@ -149,6 +233,10 @@ export default function GalleryPage() {
                 <img
                   src={item.src}
                   alt={item.alt}
+                  loading={index < 3 ? "eager" : "lazy"}
+                  decoding="async"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -173,10 +261,10 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* REDESIGNED SLEEK WHITE POPUP MODAL CARD OVER BACKDROP */}
+      {/* SLEEK WHITE POPUP MODAL CARD OVER BACKDROP (CONDITIONALLY MOUNTED) */}
       {lightboxOpen && (
         <div 
-          className="fixed inset-0 z-[150] bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 md:p-8 animate-in fade-in duration-300"
+          className="fixed inset-0 z-[150] bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 md:p-8 animate-in fade-in duration-200"
           onClick={closeLightbox}
         >
           {/* White Modal Card Container */}
@@ -197,11 +285,16 @@ export default function GalleryPage() {
             </div>
 
             {/* Center Main Active Image Display */}
-            <div className="relative aspect-[4/3] w-full max-h-[58vh] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-900 border border-gray-200/60 shadow-inner flex items-center justify-center">
+            <div className="relative aspect-[4/3] w-full max-h-[58vh] rounded-xl sm:rounded-2xl overflow-hidden bg-white flex items-center justify-center">
               <img
-                src={GALLERY_IMAGES[activeIndex].src}
-                alt={GALLERY_IMAGES[activeIndex].alt}
-                className="w-full h-full object-cover transition-all duration-300"
+                key={FULL_GALLERY_IMAGES[activeIndex].src}
+                src={FULL_GALLERY_IMAGES[activeIndex].src}
+                alt={FULL_GALLERY_IMAGES[activeIndex].alt}
+                loading="eager"
+                decoding="async"
+                width={1200}
+                height={900}
+                className="w-full h-full object-contain transition-opacity duration-300"
               />
             </div>
 
@@ -218,10 +311,11 @@ export default function GalleryPage() {
               </button>
 
               {/* Centered Thumbnails Row */}
-              <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto justify-center flex-1 max-w-2xl py-1">
-                {GALLERY_IMAGES.map((img, idx) => (
+              <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto justify-start sm:justify-center flex-1 max-w-2xl py-1 scroll-smooth">
+                {FULL_GALLERY_IMAGES.map((img, idx) => (
                   <button
                     key={img.id}
+                    ref={(el) => { thumbnailRefs.current[idx] = el }}
                     type="button"
                     onClick={() => setActiveIndex(idx)}
                     className={cn(
@@ -232,7 +326,15 @@ export default function GalleryPage() {
                     )}
                     aria-label={`Go to slide ${idx + 1}`}
                   >
-                    <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      loading="lazy"
+                      decoding="async"
+                      width={120}
+                      height={90}
+                      className="w-full h-full object-cover"
+                    />
                   </button>
                 ))}
               </div>
@@ -256,3 +358,6 @@ export default function GalleryPage() {
     </main>
   )
 }
+
+
+

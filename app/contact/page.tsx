@@ -111,7 +111,7 @@ export default function ContactPage() {
                     ADDRESS
                   </span>
                   <p className="text-sm text-gray-700 leading-relaxed font-light">
-                    Margossa Residence, Kandy, Sri Lanka
+                    No 251/A Wattarantenna Passage, Kandy 20000
                   </p>
                 </div>
 
@@ -121,13 +121,13 @@ export default function ContactPage() {
                     DIRECT INQUIRIES
                   </span>
                   <a 
-                    href="mailto:stay@margossaresidence.lk" 
+                    href="mailto:info@cohostceylon.com" 
                     className="text-sm text-gray-700 block hover:underline hover:text-amber-900 transition-colors mb-1 font-light"
                   >
-                    stay@margossaresidence.lk
+                    info@cohostceylon.com
                   </a>
                   <a 
-                    href="tel:0777772616" 
+                    href="tel:0777 772 616" 
                     className="text-sm text-gray-700 block hover:underline hover:text-amber-900 transition-colors font-light"
                   >
                     0777 772 616
@@ -140,10 +140,10 @@ export default function ContactPage() {
                     RESERVATIONS
                   </span>
                   <a 
-                    href="mailto:reservations@margossaresidence.lk" 
+                    href="mailto:info@cohostceylon.com" 
                     className="text-sm text-gray-700 block hover:underline hover:text-amber-900 transition-colors font-light"
                   >
-                    reservations@margossaresidence.lk
+                    info@cohostceylon.com
                   </a>
                 </div>
               </div>

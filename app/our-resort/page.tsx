@@ -4,23 +4,25 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Bed } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn, basePath } from '@/lib/utils'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ReviewsSection } from '@/components/reviews-section'
 
 const MARGOSSA_SUITE_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80", alt: "Margossa Suite Master Bedroom" },
-  { src: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80", alt: "Margossa Suite Private Balcony View" },
-  { src: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80", alt: "Margossa Suite Living Area & Sofa Bed" },
-  { src: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80", alt: "Margossa Suite Ensuite Bathroom" },
+  { src: `${basePath}/suiteImgs/margossa/0U4A1856.webp`, alt: "Margossa Suite Bedroom View" },
+  { src: `${basePath}/suiteImgs/margossa/0U4A1861.webp`, alt: "Margossa Suite Interior Details" },
+  { src: `${basePath}/suiteImgs/margossa/0U4A1866.webp`, alt: "Margossa Suite Living Space" },
+  { src: `${basePath}/suiteImgs/margossa/0U4A1920.webp`, alt: "Margossa Suite Balcony View" },
+  { src: `${basePath}/suiteImgs/margossa/0U4A1931.webp`, alt: "Margossa Suite Bathroom & Comforts" },
 ]
 
 const NEEM_SUITE_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80", alt: "Neem Suite Bedroom Interior" },
-  { src: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80", alt: "Neem Suite Open Air Sky Bathroom" },
-  { src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80", alt: "Neem Suite Garden Terrace" },
-  { src: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80", alt: "Neem Suite Lounge Area" },
+  { src: `${basePath}/suiteImgs/neem/0U4A1717.webp`, alt: "Neem Suite Bedroom Layout" },
+  { src: `${basePath}/suiteImgs/neem/0U4A1721.webp`, alt: "Neem Suite Interior Design" },
+  { src: `${basePath}/suiteImgs/neem/0U4A1738.webp`, alt: "Neem Suite Open-Air Bath Area" },
+  { src: `${basePath}/suiteImgs/neem/0U4A1745.webp`, alt: "Neem Suite Cosy Seating Area" },
+  { src: `${basePath}/suiteImgs/neem/0U4A1764.webp`, alt: "Neem Suite Hillside View" },
 ]
 
 interface SuiteGalleryCardProps {
@@ -67,17 +69,17 @@ function SuiteGalleryCard({
             />
           </div>
 
-          {/* BOTTOM PORTION: 4-Column Thumbnail Grid & Pagination Controls */}
+          {/* BOTTOM PORTION: Single-Row Thumbnail List & Pagination Controls */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-            {/* 4-Column Thumbnails */}
-            <div className="grid grid-cols-4 gap-2.5 w-full sm:w-auto flex-1">
+            {/* Horizontal Single-Row Thumbnails */}
+            <div className="flex flex-row flex-nowrap items-center gap-2 overflow-x-auto scrollbar-none w-full flex-1 min-w-0 py-1">
               {images.map((img, idx) => (
                 <button
                   key={idx}
                   type="button"
                   onClick={() => setActiveImgIndex(idx)}
                   className={cn(
-                    "relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition-all cursor-pointer focus:outline-none",
+                    "relative aspect-[4/3] flex-1 min-w-[54px] rounded-lg overflow-hidden border-2 transition-all cursor-pointer focus:outline-none shrink-0 sm:shrink",
                     idx === activeImgIndex 
                       ? "border-amber-800 opacity-100 shadow-sm scale-102" 
                       : "border-transparent opacity-60 hover:opacity-90"
@@ -167,7 +169,7 @@ export default function OurResortPage() {
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
           
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-gray-900 leading-tight mb-6 tracking-wide max-w-4xl mx-auto">
-            A Boutique Home in the Heart of Kandy
+            A Boutique Home in the <br/> Heart of  Kandy
           </h1>
           <div className="w-16 h-px bg-amber-800/40 mx-auto mb-6" />
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-light max-w-3xl mx-auto">
@@ -180,8 +182,8 @@ export default function OurResortPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 md:-mt-12 relative z-20 mb-20 md:mb-28">
         <div className="relative aspect-[21/9] min-h-[350px] md:min-h-[460px] w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-900 border border-gray-200/50">
           <Image
-            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80"
-            alt="Margossa Residence Kandy Luxury Hillside Property"
+            src={`${basePath}/suiteImgs/ourResortHeroImg.webp`}
+            alt="Margossa Residence Luxury Retreat"
             fill
             priority
             sizes="(max-width: 1280px) 100vw, 1280px"

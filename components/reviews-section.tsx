@@ -167,20 +167,22 @@ export function ReviewsSection() {
         <span className="block text-xs tracking-[0.25em] text-gray-600 uppercase text-center mb-3">
           AS SEEN ON YOUTUBE
         </span>
-        <h3 className="font-serif text-2xl md:text-3xl text-gray-900 text-center mb-8 uppercase">
-          Watch Davud Akhundzada&apos;s Experience at Margossa Residence
+        <h3 className="font-serif text-2xl md:text-3xl text-gray-900 text-center mb-8 uppercase leading-snug">
+          Watch Davud Akhundzada&apos;s Experience at <br /> Margossa Residence
         </h3>
 
         {/* Video Player Container */}
         <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-xl border border-gray-200/50 bg-gray-900">
           {playing ? (
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/7T_1j2rYy5I?autoplay=1"
-              title="Watch Davud Akhundzada's Experience at Margossa Residence"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            <video
+              src={`${basePath}/video.mp4`}
+              controls
+              autoPlay
+              playsInline
+              className="absolute inset-0 h-full w-full object-cover"
+            >
+              Your browser does not support the video tag.
+            </video>
           ) : (
             <button
               type="button"
@@ -189,11 +191,11 @@ export function ReviewsSection() {
               aria-label="Play guest experience video"
             >
               <Image
-                src={`${basePath}/video-thumb.png`}
+                src={`${basePath}/Margossa-Residence-Kandy/hero_section_imgs/hero-1.webp`}
                 alt="Davud Akhundzada Kandy Vlog at Margossa Residence"
                 fill
                 sizes="(max-width: 1024px) 100vw, 1024px"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-102"
+                className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-102"
               />
               <span className="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/30" />
               <span className="absolute left-1/2 top-1/2 flex size-16 md:size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-900 transition-transform duration-300 group-hover:scale-110 shadow-lg border border-gray-100">

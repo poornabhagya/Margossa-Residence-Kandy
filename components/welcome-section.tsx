@@ -1,24 +1,26 @@
-const basePath = process.env.NODE_ENV === 'production' ? '/Margossa-Residence-Kandy' : ''
+"use client";
+
+import React from "react";
+
+const basePath = process.env.NODE_ENV === "production" ? "/Margossa-Residence-Kandy" : "";
 
 export function WelcomeSection() {
   return (
     <section id="welcome" className="bg-white py-20 w-full">
       <div className="px-6 max-w-4xl mx-auto text-center flex flex-col items-center">
         
-        {/* Logo */}
-        <div className="flex flex-col items-center justify-center mb-6">
+        {/* Logo Wrapper with 140px width & mb-8 gap */}
+        <div className="flex items-center justify-center mb-12">
           <img
             src={`${basePath}/MargossaKandyLogo.png`}
             alt="Margossa Residence Logo"
-            style={{ height: '95px', width: 'auto' }}
-            className="object-contain mb-4"
+            style={{ width: "140px", height: "auto", maxWidth: "140px" }}
+            className="block mx-auto object-contain"
           />
         </div>
 
         {/* Sub-heading */}
-        <span className="block text-xs tracking-[0.2em] text-gray-500 uppercase mb-3">
-          MARGOSSA RESIDENCE, KANDY
-        </span>
+        
 
         {/* Main Heading */}
         <h2 className="font-serif text-3xl md:text-4xl tracking-wide text-gray-900 uppercase mb-8">
@@ -40,5 +42,5 @@ export function WelcomeSection() {
 
       </div>
     </section>
-  )
+  );
 }
