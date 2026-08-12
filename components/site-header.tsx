@@ -67,12 +67,14 @@ export function SiteHeader() {
 
           {/* Right Side: CONTACT US outline button */}
           <div className="flex items-center shrink-0">
-            <Link
-              href="/contact"
+            <a
+              href="https://live.ipms247.com/booking/book-rooms-margossaresidencekandytwobedroomdesignvilla"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:inline-block rounded-none border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 text-center"
             >
-              Contact Us
-            </Link>
+              Book Now
+            </a>
           </div>
 
         </div>
@@ -137,13 +139,15 @@ export function SiteHeader() {
 
           {/* Drawer Footer */}
           <div className="pt-6 border-t border-gray-100 flex flex-col gap-4">
-            <Link
-              href="/contact"
+            <a
+              href="https://live.ipms247.com/booking/book-rooms-margossaresidencekandytwobedroomdesignvilla"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
               className="w-full text-center rounded-none border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white py-3 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 inline-block"
             >
-              Contact Us
-            </Link>
+              Book Now
+            </a>
             <div className="text-center text-[0.65rem] text-gray-400 uppercase tracking-widest">
               Margossa Residence © 2026
             </div>

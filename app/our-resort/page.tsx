@@ -145,12 +145,14 @@ function SuiteGalleryCard({
           </div>
 
           <div>
-            <Link
-              href="/contact"
+            <a
+              href="https://live.ipms247.com/booking/book-rooms-margossaresidencekandytwobedroomdesignvilla"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block rounded-none border border-gray-900 bg-gray-900 text-white hover:bg-transparent hover:text-gray-900 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300"
             >
-              Inquire Suite Availability
-            </Link>
+              Book Now
+            </a>
           </div>
         </div>
 

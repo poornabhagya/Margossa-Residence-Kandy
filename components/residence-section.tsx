@@ -64,12 +64,14 @@ export function ResidenceSection() {
                   >
                     EXPLORE SUITE &rarr;
                   </Link>
-                  <Link 
+                  <a 
                     className="w-full sm:w-auto inline-block border border-gray-900 bg-gray-900 text-white hover:bg-black px-6 py-2.5 text-xs font-semibold uppercase tracking-widest transition-all rounded-none text-center" 
-                    href="/contact"
+                    href="https://live.ipms247.com/booking/book-rooms-margossaresidencekandytwobedroomdesignvilla"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     BOOK NOW
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
