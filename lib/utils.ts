@@ -1,7 +1,7 @@
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
-export const basePath = process.env.NODE_ENV === 'production' ? '/Margossa-Residence-Kandy' : ''
+export const basePath = ''
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
