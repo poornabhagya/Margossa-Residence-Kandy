@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-
-const basePath = process.env.NODE_ENV === "production" ? "/Margossa-Residence-Kandy" : "";
+import { basePath } from "@/lib/utils";
 
 export function WelcomeSection() {
   return (

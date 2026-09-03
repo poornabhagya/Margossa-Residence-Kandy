@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn, basePath } from '@/lib/utils'
 import Link from 'next/link'
 import { InquiryModal } from './inquiry-modal'
 
-const basePath = process.env.NODE_ENV === 'production' ? '/Margossa-Residence-Kandy' : ''
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
