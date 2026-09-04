@@ -127,10 +127,10 @@ export default function ContactPage() {
                     info@cohostceylon.com
                   </a>
                   <a 
-                    href="tel:0777 772 616" 
+                    href="tel:+94777144442" 
                     className="text-sm text-gray-700 block hover:underline hover:text-amber-900 transition-colors font-light"
                   >
-                    0777 772 616
+                    +94 777 144 442
                   </a>
                 </div>
 
