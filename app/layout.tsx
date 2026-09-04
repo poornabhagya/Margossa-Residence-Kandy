@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
+import { ScrollToTop } from '@/components/scroll-to-top'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable} bg-background overflow-x-hidden w-full`} suppressHydrationWarning>
-      <body className="font-sans antialiased overflow-x-hidden w-full relative" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${cormorant.variable} bg-background w-full`} suppressHydrationWarning>
+      <body className="font-sans antialiased w-full relative" suppressHydrationWarning>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

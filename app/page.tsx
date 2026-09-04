@@ -7,6 +7,7 @@ import { ExperiencesSection } from '@/components/experiences-section'
 import { ReviewsSection } from '@/components/reviews-section'
 import { SocialFeed } from '@/components/social-feed'
 import { SiteFooter } from '@/components/site-footer'
+import { ScrollToTop } from '@/components/scroll-to-top'
 
 export default function Page() {
   return (
