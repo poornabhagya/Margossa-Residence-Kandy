@@ -44,11 +44,12 @@ export function HeroSection() {
           priority={index === 0}
           sizes="100vw"
           className={cn(
-            "w-full h-full object-cover object-center absolute inset-0 transition-opacity duration-1000 ease-in-out",
+            "w-full h-full object-cover object-[center_top] absolute inset-0 transition-opacity duration-1000 ease-in-out",
             index === currentIndex ? "opacity-100 z-0" : "opacity-0 z-0 pointer-events-none"
           )}
         />
       ))}
+
 
       {/* Subtle Dark Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" />
