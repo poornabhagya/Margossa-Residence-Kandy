@@ -52,17 +52,17 @@ export function HeroSection() {
 
 
       {/* Subtle Dark Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/15 z-10 pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 max-w-5xl">
-        <span className="text-[10px] sm:text-xs tracking-[0.2em] mb-2 text-center text-white/90 uppercase font-medium">
+      <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 max-w-5xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+        <span className="text-[10px] sm:text-xs tracking-[0.2em] mb-2 text-center text-white/95 uppercase font-medium">
           Boutique Hillside Residence
         </span>
         <h1 className="max-w-4xl text-2xl sm:text-4xl md:text-6xl font-serif text-center leading-tight mb-4 text-white font-normal uppercase tracking-wide">
           Margossa Residence Kandy
         </h1>
-        <div className="my-6 flex items-center gap-2 sm:gap-4 text-white/70">
+        <div className="my-6 flex items-center gap-2 sm:gap-4 text-white/80">
           <span className="h-px w-6 sm:w-12 bg-current" />
           <span className="text-xs sm:text-sm uppercase tracking-widest text-center">
             Your Hillside Retreat Begins Here
@@ -71,7 +71,7 @@ export function HeroSection() {
         </div>
         <a
           href="#residence"
-          className="w-full max-w-xs sm:w-auto px-6 py-3 text-xs tracking-widest uppercase rounded-none border border-white/70 text-white transition-all hover:bg-white hover:text-gray-900 text-center"
+          className="w-full max-w-xs sm:w-auto px-6 py-3 text-xs tracking-widest uppercase rounded-none border border-white/80 text-white bg-black/10 backdrop-blur-xs transition-all hover:bg-white hover:text-gray-900 text-center"
         >
           Discover The Residence
         </a>
