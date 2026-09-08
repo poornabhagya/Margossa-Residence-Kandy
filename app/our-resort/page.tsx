@@ -204,7 +204,7 @@ export default function OurResortPage() {
           title="Margossa Suite"
           
           description="The Margossa Suite is the residence's signature retreat, offering generous space, contemporary comfort, and thoughtful design. Featuring a private balcony overlooking the lush hills of Kandy, the suite is filled with natural light and carefully curated details that create a peaceful setting to relax and unwind. A comfortable sofa bed also allows the suite to accommodate an additional guest, making it an ideal choice for couples, small families, or friends travelling together."
-          specs={["King size bed (2)", "Sofa bed (01)"]}
+          specs={["King size bed ", "Sofa bed (01)"]}
           images={MARGOSSA_SUITE_IMAGES}
         />
 
@@ -213,7 +213,7 @@ export default function OurResortPage() {
           id="neem-suite"
           title="Neem Suite"
           description="Inspired by the calm character of the Margossa (Neem) tree, the Neem Suite offers a cosy and tranquil retreat with warm contemporary interiors and a distinctive open-air bathroom beneath the sky. Designed to create a seamless connection with nature, the suite provides an intimate and relaxing setting, making it the perfect place to slow down and enjoy the peaceful surroundings of Kandy."
-          specs={["Queen sized Bed (2)"]}
+          specs={["King size Bed"]}
           images={NEEM_SUITE_IMAGES}
           reverseLayout={true}
         />
