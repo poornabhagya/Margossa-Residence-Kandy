@@ -56,7 +56,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 max-w-5xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-        <span className="text-[10px] sm:text-xs tracking-[0.2em] mb-2 text-center text-white/95 uppercase font-medium">
+        <span className="text-[10px] sm:text-xs tracking-[0.2em] mb-2 text-center text-white/80 uppercase font-medium">
           Boutique Hillside Residence
         </span>
         <h1 className="max-w-4xl text-2xl sm:text-4xl md:text-6xl font-serif text-center leading-tight mb-4 text-white font-normal uppercase tracking-wide">
