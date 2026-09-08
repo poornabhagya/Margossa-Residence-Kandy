@@ -8,7 +8,7 @@ import { cn, basePath } from '@/lib/utils'
 const REVIEWS = [
   {
     quote:
-      "‘Our stay at Margossa Residence in Kandy was absolutely perfect — hands down, the best place we’ve stayed in Sri Lanka.\n\nFrom the moment we arrived, we were welcomed with warmth and kindness. The owner and host is truly exceptional — incredibly friendly, attentive, and genuinely cares about his guests. He made us feel at home in the best way possible, and we honestly regretted not staying longer.\n\nThe view from the property is breathtaking, and the atmosphere is so peaceful and calming — you feel like you’re in a small oasis above the city.\n\nThe interior design of the villa is stylish and thoughtful — every detail feels modern, fresh, and comfortable.\n\nAnd the breakfast… wow. Truly one of the best we’ve had in Sri Lanka — fresh, generous, and made with love.\n\nWe are already dreaming of coming back to Margossa. This place is a gem. Thank you for making our honeymoon stay so memorable 💛 ’",
+      "Our stay at Margossa Residence in Kandy was absolutely perfect hands down, the best place we’ve stayed in Sri Lanka. From the moment we arrived, we were welcomed with warmth and kindness. The owner and host is truly exceptional incredibly friendly, attentive, and genuinely cares about his guests. He made us feel at home in the best way possible, and we honestly regretted not staying longer. The view from the property is breathtaking, and the atmosphere is so peaceful and calming you feel like you’re in a small oasis above the city. The interior design of the villa is stylish and thoughtful every detail feels modern, fresh, and comfortable. And the breakfast… wow. Truly one of the best we’ve had in Sri Lanka — fresh, generous, and made with love. We are already dreaming of coming back to Margossa. This place is a gem. Thank you for making our honeymoon stay so memorable 💛",
     author: "Angelina",
     country: "🇬🇧 United Kingdom",
     rating: 5,
@@ -16,7 +16,7 @@ const REVIEWS = [
   },
   {
     quote:
-      "‘An amazing place. The hospitality and the service was excellent. The room - with access to the whole house - made you feel relaxed and happy. You could eat a delicious breakfast at the balcony, and choose to relax. If you had any questions, it was nothing that mr.Asitha, the ouner, could not answere or help you to solve. And you would easily get his drive you to the city center or to some of the amazing sites of Kandy. Its a good place for families, but also for single travellers. I would love to Come back some day.’’",
+      "An amazing place. The hospitality and the service was excellent. The room - with access to the whole house - made you feel relaxed and happy. You could eat a delicious breakfast at the balcony, and choose to relax. If you had any questions, it was nothing that mr.Asitha, the owner, could not answer or help you to solve. And you would easily get his drive you to the city center or to some of the amazing sites of Kandy. Its a good place for families, but also for single travellers. I would love to Come back some day.",
     author: "per andersen",
     country: null,
     rating: 5,
@@ -24,7 +24,7 @@ const REVIEWS = [
   },
   {
     quote:
-      "‘These are things why you should choose this place to stay in:\n1. In whole house there are only 2 rooms. So it often happens that you will be the only guest in whole house. In this case Asitha - the owner will let you use both rooms. There is real tropical rain under the open sky in one of them.\n2. Asitha is very attentive owner. He takes care of every single moment while you staying.\n3. Amazing breakfasts\n4. Quiet please among the jungle\n5. Parking\n6. Price for staying is very low. We even thought owner will ask to pay more than price booking :) ‘’",
+      "These are things why you should choose this place to stay in: 1. In whole house there are only 2 rooms. So it often happens that you will be the only guest in whole house. In this case Asitha - the owner will let you use both rooms. There is real tropical rain under the open sky in one of them. 2. Asitha is very attentive owner. He takes care of every single moment while you staying. 3. Amazing breakfasts 4. Quiet place among the jungle 5. Parking 6. Price for staying is very low. We even thought owner will ask to pay more than price booking :)",
     author: "Artyom",
     country: "🇰🇿 Kazakhstan",
     rating: 5,
@@ -32,7 +32,7 @@ const REVIEWS = [
   },
   {
     quote:
-      "‘I want to describe this experience as perfect. The house is exquisitely designed; it's the most beautiful guesthouse I've ever stayed in. We even received lovely chocolates upon check-in, showing the owner's dedication to both design and service. There are so many wonderful words to describe this place and this unique experience, but I don't know where to begin. This was my first night in Sri Lanka, and this guesthouse experience instantly boosted our positive impression of the country. What I remember most vividly was the hotel breakfast. It was the first time I'd ever had such a thoughtfully prepared breakfast—it was simply wonderful! The food was delicious and beautifully presented; we couldn't resist taking pictures. The owner prepared an incredibly lavish spread, and since we couldn't finish it all, he even let us take some home—so touching! I hope to encounter such beautiful houses and such considerate owners on my future travels!”",
+      "I want to describe this experience as perfect. The house is exquisitely designed; it's the most beautiful guesthouse I've ever stayed in. We even received lovely chocolates upon check-in, showing the owner's dedication to both design and service. There are so many wonderful words to describe this place and this unique experience, but I don't know where to begin. This was my first night in Sri Lanka, and this guesthouse experience instantly boosted our positive impression of the country. What I remember most vividly was the hotel breakfast. It was the first time I'd ever had such a thoughtfully prepared breakfast—it was simply wonderful! The food was delicious and beautifully presented; we couldn't resist taking pictures. The owner prepared an incredibly lavish spread, and since we couldn't finish it all, he even let us take some home—so touching! I hope to encounter such beautiful houses and such considerate owners on my future travels!",
     author: "yu zhang",
     country: null,
     rating: 5,
@@ -40,7 +40,7 @@ const REVIEWS = [
   },
   {
     quote:
-      "‘Highly recommend! House is very nice, clean and special. We had rented one out of the two bedrooms, and were the only guests that night, so we had the great living room and kitchen area to ourselves.\n\nWe had the room without own balcony, but that was not a problem. The room is big and clean, with a very cool design and an outside shower (covered so no insects inside). House also had a balcony we could use, with view of the mountains.\n\nThe host was very friendly and helpful, and offered great breakfast. He also offered to help us ordering dinner delivered to the house, and gave us a bottle of wine - which is way more than expected! ‘",
+      "Highly recommend! House is very nice, clean and special. We had rented one out of the two bedrooms, and were the only guests that night, so we had the great living room and kitchen area to ourselves. We had the room without own balcony, but that was not a problem. The room is big and clean, with a very cool design and an outside shower (covered so no insects inside). House also had a balcony we could use, with view of the mountains. The host was very friendly and helpful, and offered great breakfast. He also offered to help us ordering dinner delivered to the house, and gave us a bottle of wine - which is way more than expected!",
     author: "Thea",
     country: "🇳🇴 Norway",
     rating: 5,
@@ -48,7 +48,7 @@ const REVIEWS = [
   },
   {
     quote:
-      "‘This property is a rare gem and stood out to us as a truly unique and amazing experience. The host pays attention to detail and the property is a wonderful, starting from the location on quiet hills out of town where you can relax on terrace and watch birds , everything is perfectly cleaned and the design and decoration is incredible and interesting. The breakfast was amazing and the host truly makes a perfect cup of tea and best eggs and made our family feel very welcome. ‘",
+      "This property is a rare gem and stood out to us as a truly unique and amazing experience. The host pays attention to detail and the property is wonderful, starting from the location on quiet hills out of town where you can relax on terrace and watch birds, everything is perfectly cleaned and the design and decoration is incredible and interesting. The breakfast was amazing and the host truly makes a perfect cup of tea and best eggs and made our family feel very welcome.",
     author: "Daniel",
     country: "🇬🇧 United Kingdom",
     rating: 5,
@@ -56,7 +56,7 @@ const REVIEWS = [
   },
   {
     quote:
-      "‘The house itself is very stylish indeed, with lovely touches throughout. The host, Asitha, is a lovely person who went well out of his way to make our stay special. I'd go so far as to say that it was some of the most impressive and personal service I've ever seen.\n\nThe breakfasts were really great (something we found to be the case all across Sri Lanka), and the outdoor shower in the smaller bedroom was superb.\n\nWe wished we could stay longer... If only all hotels and guest houses were as nice as this one! ‘",
+      "The house itself is very stylish indeed, with lovely touches throughout. The host, Asitha, is a lovely person who went well out of his way to make our stay special. I'd go so far as to say that it was some of the most impressive and personal service I've ever seen. The breakfasts were really great (something we found to be the case all across Sri Lanka), and the outdoor shower in the smaller bedroom was superb. We wished we could stay longer... If only all hotels and guest houses were as nice as this one!",
     author: "Guy",
     country: "🇬🇧 United Kingdom",
     rating: 5,
@@ -152,9 +152,9 @@ export function ReviewsSection() {
               marginBottom: '24px',
             }}
           >
-            <blockquote
+            <blockquote 
               className={cn(
-                'font-serif text-base md:text-lg text-gray-800 italic leading-relaxed whitespace-pre-line transition-opacity duration-300 ease-in-out',
+                'font-serif text-base md:text-lg text-gray-800 italic leading-relaxed transition-opacity duration-300 ease-in-out',
                 isFading ? 'opacity-0' : 'opacity-100'
               )}
             >
