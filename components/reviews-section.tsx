@@ -7,19 +7,60 @@ import { cn, basePath } from '@/lib/utils'
 
 const REVIEWS = [
   {
-    quote: "An amazing place. The hospitality and the service was excellent. The room - with access to the whole house - made you feel relaxed and happy. You could eat a delicious breakfast at the balcony, and choose to relax. If you had any questions, it was nothing that mr.Asitha, the ouner, could not answere or help you to solve. And you would easily get his drive you to the city center or to some of the amazing sites of Kandy. Its a good place for families, but also for single travellers. I would love to Come back some day.",
+    quote:
+      "‘Our stay at Margossa Residence in Kandy was absolutely perfect — hands down, the best place we’ve stayed in Sri Lanka.\n\nFrom the moment we arrived, we were welcomed with warmth and kindness. The owner and host is truly exceptional — incredibly friendly, attentive, and genuinely cares about his guests. He made us feel at home in the best way possible, and we honestly regretted not staying longer.\n\nThe view from the property is breathtaking, and the atmosphere is so peaceful and calming — you feel like you’re in a small oasis above the city.\n\nThe interior design of the villa is stylish and thoughtful — every detail feels modern, fresh, and comfortable.\n\nAnd the breakfast… wow. Truly one of the best we’ve had in Sri Lanka — fresh, generous, and made with love.\n\nWe are already dreaming of coming back to Margossa. This place is a gem. Thank you for making our honeymoon stay so memorable 💛 ’",
+    author: "Angelina",
+    country: "🇬🇧 United Kingdom",
     rating: 5,
-    source: "Google Reviews",
+    source: "booking.com",
   },
   {
-    quote: "Nestled in the stunning hills surrounding Kandy, this residence is just a quick Tuk-Tuk ride away from the vibrant city center and the iconic temple. The house is beautifully organized and adorned, making it feel like a true home away from home. Asitha elevates the hosting experience to an extraordinary level — you won't want to leave this place. NB: no pool and did not need it.",
+    quote:
+      "‘An amazing place. The hospitality and the service was excellent. The room - with access to the whole house - made you feel relaxed and happy. You could eat a delicious breakfast at the balcony, and choose to relax. If you had any questions, it was nothing that mr.Asitha, the ouner, could not answere or help you to solve. And you would easily get his drive you to the city center or to some of the amazing sites of Kandy. Its a good place for families, but also for single travellers. I would love to Come back some day.’’",
+    author: "per andersen",
+    country: null,
     rating: 5,
-    source: "Google Reviews",
+    source: "Google reviews",
   },
   {
-    quote: "An exceptionally generous and delicious breakfast—so filling that you won’t need lunch. But it’s not just about eating; Asitha turns every breakfast into a memorable experience. Each day brings something new, thoughtfully prepared with care and passion. The house itself tells a story. We couldn’t resist asking Asitha about the beautiful items throughout his home, and he was always happy to share their stories, along with helpful tips on where to find similar pieces.",
+    quote:
+      "‘These are things why you should choose this place to stay in:\n1. In whole house there are only 2 rooms. So it often happens that you will be the only guest in whole house. In this case Asitha - the owner will let you use both rooms. There is real tropical rain under the open sky in one of them.\n2. Asitha is very attentive owner. He takes care of every single moment while you staying.\n3. Amazing breakfasts\n4. Quiet please among the jungle\n5. Parking\n6. Price for staying is very low. We even thought owner will ask to pay more than price booking :) ‘’",
+    author: "Artyom",
+    country: "🇰🇿 Kazakhstan",
     rating: 5,
-    source: "Google Reviews",
+    source: "booking.com",
+  },
+  {
+    quote:
+      "‘I want to describe this experience as perfect. The house is exquisitely designed; it's the most beautiful guesthouse I've ever stayed in. We even received lovely chocolates upon check-in, showing the owner's dedication to both design and service. There are so many wonderful words to describe this place and this unique experience, but I don't know where to begin. This was my first night in Sri Lanka, and this guesthouse experience instantly boosted our positive impression of the country. What I remember most vividly was the hotel breakfast. It was the first time I'd ever had such a thoughtfully prepared breakfast—it was simply wonderful! The food was delicious and beautifully presented; we couldn't resist taking pictures. The owner prepared an incredibly lavish spread, and since we couldn't finish it all, he even let us take some home—so touching! I hope to encounter such beautiful houses and such considerate owners on my future travels!”",
+    author: "yu zhang",
+    country: null,
+    rating: 5,
+    source: "Google reviews",
+  },
+  {
+    quote:
+      "‘Highly recommend! House is very nice, clean and special. We had rented one out of the two bedrooms, and were the only guests that night, so we had the great living room and kitchen area to ourselves.\n\nWe had the room without own balcony, but that was not a problem. The room is big and clean, with a very cool design and an outside shower (covered so no insects inside). House also had a balcony we could use, with view of the mountains.\n\nThe host was very friendly and helpful, and offered great breakfast. He also offered to help us ordering dinner delivered to the house, and gave us a bottle of wine - which is way more than expected! ‘",
+    author: "Thea",
+    country: "🇳🇴 Norway",
+    rating: 5,
+    source: "booking.com",
+  },
+  {
+    quote:
+      "‘This property is a rare gem and stood out to us as a truly unique and amazing experience. The host pays attention to detail and the property is a wonderful, starting from the location on quiet hills out of town where you can relax on terrace and watch birds , everything is perfectly cleaned and the design and decoration is incredible and interesting. The breakfast was amazing and the host truly makes a perfect cup of tea and best eggs and made our family feel very welcome. ‘",
+    author: "Daniel",
+    country: "🇬🇧 United Kingdom",
+    rating: 5,
+    source: "booking.com",
+  },
+  {
+    quote:
+      "‘The house itself is very stylish indeed, with lovely touches throughout. The host, Asitha, is a lovely person who went well out of his way to make our stay special. I'd go so far as to say that it was some of the most impressive and personal service I've ever seen.\n\nThe breakfasts were really great (something we found to be the case all across Sri Lanka), and the outdoor shower in the smaller bedroom was superb.\n\nWe wished we could stay longer... If only all hotels and guest houses were as nice as this one! ‘",
+    author: "Guy",
+    country: "🇬🇧 United Kingdom",
+    rating: 5,
+    source: "booking.com",
   },
 ]
 
@@ -44,6 +85,12 @@ const GoogleGLogo = () => (
   </svg>
 )
 
+const BookingLogo = () => (
+  <span className="inline-flex items-center justify-center size-4 rounded-sm bg-[#003580] text-white text-[10px] font-black leading-none select-none">
+    B.
+  </span>
+)
+
 export function ReviewsSection() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -64,21 +111,20 @@ export function ReviewsSection() {
     const interval = setInterval(() => {
       const nextIndex = (activeIndex + 1) % REVIEWS.length
       handleSlideChange(nextIndex)
-    }, 6000)
+    }, 7000)
 
     return () => clearInterval(interval)
   }, [activeIndex, isPaused])
 
   return (
-    <section 
-      id="reviews" 
-      style={{ backgroundColor: '#EBE8DF' }} 
+    <section
+      id="reviews"
+      style={{ backgroundColor: '#EBE8DF' }}
       className="py-16 md:py-24 w-full"
       suppressHydrationWarning
     >
-      
       {/* Part 1: Guest Reviews */}
-      <div 
+      <div
         className="max-w-4xl mx-auto px-6 text-center mb-16 border-b border-gray-400/30 pb-16"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -96,25 +142,35 @@ export function ReviewsSection() {
 
         {/* Carousel Testimonial Card */}
         <div className="max-w-3xl mx-auto relative px-4">
-          
-          {/* Hardcoded Min-Height to avoid vertical shift */}
-          <div 
-            style={{ 
-              minHeight: '180px', 
-              display: 'flex', 
-              alignItems: 'center', 
+          <div
+            style={{
+              minHeight: '260px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '24px' 
+              marginBottom: '24px',
             }}
           >
-            <blockquote 
+            <blockquote
               className={cn(
-                'font-serif text-base md:text-lg text-gray-800 italic leading-relaxed transition-opacity duration-300 ease-in-out',
+                'font-serif text-base md:text-lg text-gray-800 italic leading-relaxed whitespace-pre-line transition-opacity duration-300 ease-in-out',
                 isFading ? 'opacity-0' : 'opacity-100'
               )}
             >
               &ldquo;{REVIEWS[activeIndex].quote}&rdquo;
             </blockquote>
+
+            {REVIEWS[activeIndex].author && (
+              <p
+                className={cn(
+                  'mt-4 text-xs tracking-widest text-gray-700 uppercase font-semibold transition-opacity duration-300',
+                  isFading ? 'opacity-0' : 'opacity-100'
+                )}
+              >
+                — {REVIEWS[activeIndex].author}
+              </p>
+            )}
           </div>
 
           {/* Controls Container */}
@@ -126,14 +182,18 @@ export function ReviewsSection() {
             </div>
 
             <div className="flex items-center justify-center gap-2">
-              <GoogleGLogo />
+              {REVIEWS[activeIndex].source === 'Google Reviews' ? (
+                <GoogleGLogo />
+              ) : (
+                <BookingLogo />
+              )}
               <span className="text-xs tracking-wider text-gray-700 font-medium uppercase">
                 {REVIEWS[activeIndex].source}
               </span>
             </div>
 
             {/* Pagination Dots */}
-            <div className="flex justify-center items-center gap-2 mt-8">
+            <div className="flex flex-wrap justify-center items-center gap-2 mt-8">
               {REVIEWS.map((_, idx) => (
                 <button
                   key={idx}
@@ -147,18 +207,17 @@ export function ReviewsSection() {
                 >
                   <div
                     style={{
-                      height: '10px',
-                      width: idx === activeIndex ? '28px' : '10px',
+                      height: '8px',
+                      width: idx === activeIndex ? '26px' : '8px',
                       backgroundColor: idx === activeIndex ? '#0F172A' : '#CBD5E1',
                       borderRadius: '9999px',
-                      transition: 'all 0.3s ease-in-out'
+                      transition: 'all 0.3s ease-in-out',
                     }}
                   />
                 </button>
               ))}
             </div>
           </div>
-
         </div>
       </div>
 
@@ -205,7 +264,6 @@ export function ReviewsSection() {
           )}
         </div>
       </div>
-
     </section>
   )
 }
