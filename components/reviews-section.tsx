@@ -182,7 +182,7 @@ export function ReviewsSection() {
             </div>
 
             <div className="flex items-center justify-center gap-2">
-              {REVIEWS[activeIndex].source === 'Google Reviews' ? (
+              {REVIEWS[activeIndex].source.toLowerCase().includes('google') ? (
                 <GoogleGLogo />
               ) : (
                 <BookingLogo />
