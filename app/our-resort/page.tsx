@@ -213,7 +213,7 @@ export default function OurResortPage() {
           id="neem-suite"
           title="Neem Suite"
           description="Inspired by the calm character of the Margossa (Neem) tree, the Neem Suite offers a cosy and tranquil retreat with warm contemporary interiors and a distinctive open-air bathroom beneath the sky. Designed to create a seamless connection with nature, the suite provides an intimate and relaxing setting, making it the perfect place to slow down and enjoy the peaceful surroundings of Kandy."
-          specs={["King sized Bed"]}
+          specs={["King size Bed"]}
           images={NEEM_SUITE_IMAGES}
           reverseLayout={true}
         />
